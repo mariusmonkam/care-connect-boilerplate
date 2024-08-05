@@ -1,0 +1,17 @@
+/* src/styles/pages/BlogPage.css */
+
+/* Page-Specific Styles for Blog Page */
+.blog-page {
+  padding: 20px;
+}
+
+.blog-page .blog-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog-page .post {
+  max-width: 100%;
+  width: 100%;
+}

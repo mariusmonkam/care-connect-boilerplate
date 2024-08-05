@@ -1,0 +1,20 @@
+.app-integrations {
+  padding: 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.app-integrations .integration {
+  display: inline-block;
+  margin: 1rem;
+}
+
+.app-integrations .integration img {
+  max-width: 100px;
+}
+
+@media (max-width: 768px) {
+  .app-integrations .integration img {
+    max-width: 75px;
+  }
+}

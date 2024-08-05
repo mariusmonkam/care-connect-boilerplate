@@ -1,0 +1,59 @@
+/* src/styles/CallToAction.css */
+.call-to-action {
+  padding: 3rem 2rem; /* Increased padding for better visual balance */
+  background-color: var(
+    --cta-background-color,
+    #007bff
+  ); /* Primary color for CTA */
+  color: var(--cta-text-color, #ffffff);
+  text-align: center;
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.call-to-action h2 {
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  margin-bottom: 1.5rem;
+  font-weight: 700; /* Bold text for better readability */
+}
+
+.call-to-action .cta-button {
+  background-color: var(--cta-button-background-color, #ffffff);
+  color: var(--cta-button-text-color, #007bff);
+  border: none;
+  border-radius: 5px; /* Rounded corners for the button */
+  padding: 0.75rem 2rem; /* Adjusted padding for a balanced look */
+  font-size: 1rem; /* Ensuring button text is readable */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.call-to-action .cta-button:hover {
+  background-color: var(--cta-button-hover-background-color, #f8f9fa);
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+@media (max-width: 768px) {
+  .call-to-action {
+    padding: 2rem 1rem; /* Reduced padding for smaller screens */
+  }
+
+  .call-to-action h2 {
+    font-size: 2rem; /* Slightly smaller font size */
+  }
+
+  .call-to-action .cta-button {
+    padding: 0.5rem 1.5rem; /* Adjusted padding for the button */
+  }
+}
+
+@media (max-width: 480px) {
+  .call-to-action h2 {
+    font-size: 1.5rem; /* Smaller font size on very small screens */
+  }
+
+  .call-to-action .cta-button {
+    padding: 0.5rem 1rem; /* Reduced padding for small screens */
+    font-size: 0.875rem; /* Smaller font size for the button */
+  }
+}

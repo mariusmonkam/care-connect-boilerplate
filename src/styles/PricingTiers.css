@@ -1,0 +1,331 @@
+/* src/styles/PricingTiers.css */
+
+.pricing-tiers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 1rem;
+  background: var(
+    --pricing-tiers-background,
+    linear-gradient(135deg, #f5f7fa, #e4e8ec)
+  );
+  min-height: 100vh; /* Ensures the section takes at least the full viewport height */
+  align-items: center; /* Center the items vertically within the viewport */
+}
+
+.tier {
+  flex: 1 1 calc(33.333% - 2rem);
+  background-color: var(--tier-background-color, #ffffff);
+  padding: 2rem;
+  border: 1px solid var(--tier-border-color, #ddd);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* To position the ribbon */
+}
+
+.tier:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tier-name {
+  font-size: 2rem;
+  color: var(--tier-name-color, #333);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--tier-name-border-color, #007bff);
+  display: inline-block;
+}
+
+.tier-price {
+  font-size: 1.5rem;
+  color: var(--tier-price-color, #007bff);
+  margin-bottom: 1.5rem;
+}
+
+.tier-features {
+  list-style: none;
+  padding: 0;
+  text-align: left; /* Align features to the left for better readability */
+}
+
+.tier-features li {
+  font-size: 1rem;
+  color: var(--tier-feature-color, #666);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.tier-features li::before {
+  content: "✔";
+  color: var(--tier-feature-icon-color, #007bff);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  border: 5px solid var(--ribbon-border-color, #ff6347);
+}
+
+.ribbon::before {
+  top: 0;
+  left: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+
+.ribbon::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: var(--ribbon-background-color, #ff6347);
+  color: var(--ribbon-text-color, #fff);
+  font: 700 18px/1 "Lato", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .tier {
+    flex: 1 1 100%;
+    margin-bottom: 2rem;
+  }
+
+  .tier-name {
+    font-size: 1.75rem;
+  }
+
+  .tier-price {
+    font-size: 1.25rem;
+  }
+}
+
+/* Dark Theme */
+[data-theme="dark"] .pricing-tiers {
+  background: var(
+    --pricing-tiers-background,
+    linear-gradient(135deg, #2c2c2c, #1e1e1e)
+  );
+}
+
+[data-theme="dark"] .tier {
+  background-color: var(--tier-background-color, #333);
+  border-color: var(--tier-border-color, #444);
+}
+
+[data-theme="dark"] .tier-name {
+  color: var(--tier-name-color, #e0e0e0);
+  border-bottom-color: var(--tier-name-border-color, #ff6347);
+}
+
+[data-theme="dark"] .tier-price {
+  color: var(--tier-price-color, #ff6347);
+}
+
+[data-theme="dark"] .tier-features li {
+  color: var(--tier-feature-color, #ccc);
+}
+
+[data-theme="dark"] .tier-features li::before {
+  color: var(--tier-feature-icon-color, #ff6347);
+}
+
+[data-theme="dark"] .ribbon::before,
+[data-theme="dark"] .ribbon::after {
+  border-color: var(--ribbon-border-color, #ff6347);
+}
+
+[data-theme="dark"] .ribbon span {
+  background-color: var(--ribbon-background-color, #ff6347);
+  color: var(--ribbon-text-color, #fff);
+}
+
+/* Corporate Theme */
+[data-theme="corporate"] .pricing-tiers {
+  background: var(
+    --pricing-tiers-background,
+    linear-gradient(135deg, #e9ecef, #dee2e6)
+  );
+}
+
+[data-theme="corporate"] .tier {
+  background-color: var(--tier-background-color, #ffffff);
+  border-color: var(--tier-border-color, #ddd);
+}
+
+[data-theme="corporate"] .tier-name {
+  color: var(--tier-name-color, #333);
+  border-bottom-color: var(--tier-name-border-color, #007bff);
+}
+
+[data-theme="corporate"] .tier-price {
+  color: var(--tier-price-color, #007bff);
+}
+
+[data-theme="corporate"] .tier-features li {
+  color: var(--tier-feature-color, #666);
+}
+
+[data-theme="corporate"] .tier-features li::before {
+  color: var(--tier-feature-icon-color, #007bff);
+}
+
+[data-theme="corporate"] .ribbon::before,
+[data-theme="corporate"] .ribbon::after {
+  border-color: var(--ribbon-border-color, #007bff);
+}
+
+[data-theme="corporate"] .ribbon span {
+  background-color: var(--ribbon-background-color, #007bff);
+  color: var(--ribbon-text-color, #fff);
+}
+
+/* Elegant Theme */
+[data-theme="elegant"] .pricing-tiers {
+  background: var(
+    --pricing-tiers-background,
+    linear-gradient(135deg, #f8f9fa, #e4e8ec)
+  );
+}
+
+[data-theme="elegant"] .tier {
+  background-color: var(--tier-background-color, #ffffff);
+  border-color: var(--tier-border-color, #ddd);
+}
+
+[data-theme="elegant"] .tier-name {
+  color: var(--tier-name-color, #333);
+  border-bottom-color: var(--tier-name-border-color, #6f42c1);
+}
+
+[data-theme="elegant"] .tier-price {
+  color: var(--tier-price-color, #6f42c1);
+}
+
+[data-theme="elegant"] .tier-features li {
+  color: var(--tier-feature-color, #666);
+}
+
+[data-theme="elegant"] .tier-features li::before {
+  color: var(--tier-feature-icon-color, #6f42c1);
+}
+
+[data-theme="elegant"] .ribbon::before,
+[data-theme="elegant"] .ribbon::after {
+  border-color: var(--ribbon-border-color, #6f42c1);
+}
+
+[data-theme="elegant"] .ribbon span {
+  background-color: var(--ribbon-background-color, #6f42c1);
+  color: var(--ribbon-text-color, #fff);
+}
+
+/* Modern Theme */
+[data-theme="modern"] .pricing-tiers {
+  background: var(
+    --pricing-tiers-background,
+    linear-gradient(135deg, #f0f0f0, #dcdcdc)
+  );
+}
+
+[data-theme="modern"] .tier {
+  background-color: var(--tier-background-color, #ffffff);
+  border-color: var(--tier-border-color, #ccc);
+}
+
+[data-theme="modern"] .tier-name {
+  color: var(--tier-name-color, #212529);
+  border-bottom-color: var(--tier-name-border-color, #17a2b8);
+}
+
+[data-theme="modern"] .tier-price {
+  color: var(--tier-price-color, #17a2b8);
+}
+
+[data-theme="modern"] .tier-features li {
+  color: var(--tier-feature-color, #212529);
+}
+
+[data-theme="modern"] .tier-features li::before {
+  color: var(--tier-feature-icon-color, #17a2b8);
+}
+
+[data-theme="modern"] .ribbon::before,
+[data-theme="modern"] .ribbon::after {
+  border-color: var(--ribbon-border-color, #17a2b8);
+}
+
+[data-theme="modern"] .ribbon span {
+  background-color: var(--ribbon-background-color, #17a2b8);
+  color: var(--ribbon-text-color, #fff);
+}
+
+/* Soft Theme */
+[data-theme="soft"] .pricing-tiers {
+  background: var(
+    --pricing-tiers-background,
+    linear-gradient(135deg, #fbe8eb, #fad3d8)
+  );
+}
+
+[data-theme="soft"] .tier {
+  background-color: var(--tier-background-color, #ffffff);
+  border-color: var(--tier-border-color, #fcc);
+}
+
+[data-theme="soft"] .tier-name {
+  color: var(--tier-name-color, #4a4a4a);
+  border-bottom-color: var(--tier-name-border-color, #ff6f61);
+}
+
+[data-theme="soft"] .tier-price {
+  color: var(--tier-price-color, #ff6f61);
+}
+
+[data-theme="soft"] .tier-features li {
+  color: var(--tier-feature-color, #4a4a4a);
+}
+
+[data-theme="soft"] .tier-features li::before {
+  color: var(--tier-feature-icon-color, #ff6f61);
+}
+
+[data-theme="soft"] .ribbon::before,
+[data-theme="soft"] .ribbon::after {
+  border-color: var(--ribbon-border-color, #ff6f61);
+}
+
+[data-theme="soft"] .ribbon span {
+  background-color: var(--ribbon-background-color, #ff6f61);
+  color: var(--ribbon-text-color, #fff);
+}

@@ -1,0 +1,95 @@
+/* src/styles/Hero.css */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--hero-background-color, #007bff);
+  color: var(--hero-text-color, #ffffff);
+  padding: 2rem;
+  height: 70vh; /* Adjust as needed for visual balance */
+  overflow: hidden;
+  position: relative;
+  /* Ensure good contrast for dark themes */
+  background: var(--hero-background-color, #007bff);
+}
+
+.hero-content {
+  z-index: 2;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.hero-title,
+.hero-subtitle {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add text shadow for better readability */
+}
+
+.hero-title {
+  font-size: 3rem; /* Adjust for readability */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem; /* Adjust for readability */
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  background-color: var(--cta-button-background-color, #ffffff);
+  color: var(--cta-button-text-color, #007bff);
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-cta:hover {
+  background-color: var(--cta-button-hover-background-color, #e2e6ea);
+  transform: scale(1.05);
+}
+
+.hero-image-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay for dark theme */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(60%); /* Darker overlay for better text contrast */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+    height: auto; /* Flexible height on smaller screens */
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,82 @@
+/* src/styles/MissionSection.css */
+
+/* Define default theme variables */
+:root {
+  --mission-background-color: #f4f4f4;
+  --mission-title-color: #333;
+  --mission-description-color: #555;
+}
+
+/* Define theme-specific variables */
+[data-theme="dark"] {
+  --mission-background-color: #333;
+  --mission-title-color: #f4f4f4;
+  --mission-description-color: #ccc;
+}
+
+[data-theme="corporate"] {
+  --mission-background-color: #e9ecef;
+  --mission-title-color: #2d2d2d;
+  --mission-description-color: #666;
+}
+
+[data-theme="elegant"] {
+  --mission-background-color: #f7f7f7;
+  --mission-title-color: #222;
+  --mission-description-color: #444;
+}
+
+[data-theme="modern"] {
+  --mission-background-color: #f1f3f5;
+  --mission-title-color: #111;
+  --mission-description-color: #333;
+}
+
+.about-mission {
+  height: 80vh; /* Set height to 80% of viewport height */
+  padding: 0 20px; /* Adjust padding for responsiveness */
+  background-color: var(--mission-background-color);
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 40px;
+}
+
+.mission-content {
+  text-align: center;
+  max-width: 800px; /* Limit width for readability */
+  width: 100%; /* Ensure full width for small screens */
+}
+
+.mission-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--mission-title-color);
+  font-weight: 700;
+}
+
+.mission-description {
+  font-size: 1.2rem;
+  color: var(--mission-description-color);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .mission-title {
+    font-size: 2rem;
+  }
+
+  .mission-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-title {
+    font-size: 1.75rem;
+  }
+
+  .mission-description {
+    font-size: 0.9rem;
+  }
+}

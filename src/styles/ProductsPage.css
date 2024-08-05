@@ -1,0 +1,42 @@
+/* Styles specific to the Products Page */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product {
+  flex: 1 1 calc(33.333% - 20px);
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  margin-bottom: 10px;
+}
+
+.product p {
+  margin-bottom: 20px;
+}
+
+.product .price {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: #333;
+  border: none;
+  cursor: pointer;
+}

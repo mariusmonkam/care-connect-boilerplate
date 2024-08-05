@@ -1,0 +1,106 @@
+/* General styles for the header */
+header {
+  background-color: var(--header-background-color, #333);
+  color: var(--header-text-color, #fff);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: var(--header-link-color, #fff);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--header-link-hover-color, #ddd);
+}
+
+.theme-selector {
+  margin-left: 20px;
+  padding: 5px;
+  border: none;
+  background-color: var(--header-background-color, #333);
+  color: var(--header-text-color, #fff);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.theme-selector option {
+  background-color: var(--header-background-color, #333);
+  color: var(--header-text-color, #fff);
+}
+
+/* Menu toggle button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--header-text-color, #fff);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--header-background-color, #333);
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-links {
+    display: block;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .theme-selector {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

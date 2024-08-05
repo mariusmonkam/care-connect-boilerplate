@@ -1,0 +1,168 @@
+/* Default Theme (Light) */
+:root {
+  --background-color: #ffffff;
+  --body-background-color: #f9f9f9;
+  --text-color: #333333;
+  --cta-background-color: #007bff; /* Primary CTA color */
+  --cta-text-color: #ffffff;
+  --cta-button-background-color: #ffffff; /* Contrast button color */
+  --cta-button-text-color: #007bff; /* Contrast button text color */
+  --cta-button-hover-background-color: #e2e6ea; /* Subtle hover effect */
+  --contact-form-background-color: #ffffff;
+  --submit-button-background-color: #007bff; /* Consistent with primary CTA */
+  --submit-button-text-color: #ffffff;
+  --submit-button-hover-background-color: #0056b3; /* Darker on hover */
+  --feature-heading-color: #333333;
+  --feature-text-color: #666666;
+  --footer-background-color: #f8f8f8;
+  --footer-text-color: #333333;
+  --footer-link-color: #007bff; /* Matches CTA */
+  --footer-icon-color: #333333;
+  --header-background-color: #333333;
+  --header-text-color: #ffffff;
+  --header-link-color: #ffffff;
+  --header-link-hover-color: #dddddd;
+  --hero-background-color: #007bff; /* Consistent with CTA */
+  --hero-text-color: #ffffff;
+}
+
+/* Dark Theme */
+/* Dark Theme */
+[data-theme="dark"] {
+  --background-color: #121212;
+  --body-background-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --cta-background-color: #bb86fc; /* Soft purple for CTA */
+  --cta-text-color: #000000;
+  --cta-button-background-color: #000000; /* High contrast button color */
+  --cta-button-text-color: #bb86fc; /* Contrast button text color */
+  --cta-button-hover-background-color: #333333; /* Darker on hover */
+  --contact-form-background-color: #1e1e1e;
+  --submit-button-background-color: #bb86fc; /* Consistent with CTA */
+  --submit-button-text-color: #000000;
+  --submit-button-hover-background-color: #a855f7; /* Lighter on hover */
+  --feature-heading-color: #e0e0e0;
+  --feature-text-color: #b0b0b0;
+  --footer-background-color: #121212;
+  --footer-text-color: #e0e0e0;
+  --footer-link-color: #bb86fc; /* Consistent with CTA */
+  --footer-icon-color: #e0e0e0;
+  --header-background-color: #121212;
+  --header-text-color: #e0e0e0;
+  --header-link-color: #bb86fc; /* Consistent with CTA */
+  --header-link-hover-color: #b0b0b0;
+  --hero-background-color: #1f1f1f; /* Darker background for hero section */
+  --hero-text-color: #ffffff; /* Light text color for better readability */
+}
+
+/* Corporate Theme */
+[data-theme="corporate"] {
+  --background-color: #ffffff;
+  --body-background-color: #f1f5f9;
+  --text-color: #333333;
+  --cta-background-color: #003d7a; /* Deep blue for CTA */
+  --cta-text-color: #ffffff;
+  --cta-button-background-color: #ffffff; /* Contrast button color */
+  --cta-button-text-color: #003d7a; /* Contrast button text color */
+  --cta-button-hover-background-color: #002d5a; /* Darker on hover */
+  --contact-form-background-color: #ffffff;
+  --submit-button-background-color: #003d7a; /* Consistent with CTA */
+  --submit-button-text-color: #ffffff;
+  --submit-button-hover-background-color: #002d5a; /* Darker on hover */
+  --feature-heading-color: #003d7a;
+  --feature-text-color: #666666;
+  --footer-background-color: #003d7a;
+  --footer-text-color: #ffffff;
+  --footer-link-color: #cfe2f3;
+  --footer-icon-color: #ffffff;
+  --header-background-color: #003d7a;
+  --header-text-color: #ffffff;
+  --header-link-color: #cfe2f3;
+  --header-link-hover-color: #002d5a;
+  --hero-background-color: #003d7a; /* Consistent with CTA */
+  --hero-text-color: #ffffff;
+}
+
+/* Elegant Theme */
+[data-theme="elegant"] {
+  --background-color: #f8f9f9;
+  --body-background-color: #f1f1f1;
+  --text-color: #2e2e2e;
+  --cta-background-color: #6c757d; /* Stylish gray for CTA */
+  --cta-text-color: #ffffff;
+  --cta-button-background-color: #ffffff; /* Contrast button color */
+  --cta-button-text-color: #6c757d; /* Contrast button text color */
+  --cta-button-hover-background-color: #e2e6ea; /* Light gray on hover */
+  --contact-form-background-color: #ffffff;
+  --submit-button-background-color: #6c757d; /* Consistent with CTA */
+  --submit-button-text-color: #ffffff;
+  --submit-button-hover-background-color: #5a6268; /* Darker on hover */
+  --feature-heading-color: #2e2e2e;
+  --feature-text-color: #6c757d;
+  --footer-background-color: #6c757d;
+  --footer-text-color: #ffffff;
+  --footer-link-color: #ffffff;
+  --footer-icon-color: #ffffff;
+  --header-background-color: #6c757d;
+  --header-text-color: #ffffff;
+  --header-link-color: #ffffff;
+  --header-link-hover-color: #e2e6ea;
+  --hero-background-color: #6c757d; /* Consistent with CTA */
+  --hero-text-color: #ffffff;
+}
+
+/* Modern Theme */
+[data-theme="modern"] {
+  --background-color: #ffffff;
+  --body-background-color: #e9ecef;
+  --text-color: #212529;
+  --cta-background-color: #28a745; /* Fresh green for CTA */
+  --cta-text-color: #ffffff;
+  --cta-button-background-color: #ffffff; /* Contrast button color */
+  --cta-button-text-color: #28a745; /* Contrast button text color */
+  --cta-button-hover-background-color: #218838; /* Darker on hover */
+  --contact-form-background-color: #ffffff;
+  --submit-button-background-color: #28a745; /* Consistent with CTA */
+  --submit-button-text-color: #ffffff;
+  --submit-button-hover-background-color: #1e7e34; /* Darker on hover */
+  --feature-heading-color: #28a745;
+  --feature-text-color: #212529;
+  --footer-background-color: #28a745;
+  --footer-text-color: #ffffff;
+  --footer-link-color: #ffffff;
+  --footer-icon-color: #ffffff;
+  --header-background-color: #28a745;
+  --header-text-color: #ffffff;
+  --header-link-color: #ffffff;
+  --header-link-hover-color: #1e7e34;
+  --hero-background-color: #28a745; /* Consistent with CTA */
+  --hero-text-color: #ffffff;
+}
+
+/* Love Theme */
+[data-theme="soft"] {
+  --background-color: #fff0f6; /* Soft pink for background */
+  --body-background-color: #fbe8eb; /* Light pinkish body background */
+  --text-color: #4a4a4a; /* Soft dark gray for text */
+  --cta-background-color: #ff6f61; /* Warm coral for CTA */
+  --cta-text-color: #ffffff;
+  --cta-button-background-color: #ffffff; /* Contrast button color */
+  --cta-button-text-color: #ff6f61; /* Contrast button text color */
+  --cta-button-hover-background-color: #ffb3b3; /* Light pink on hover */
+  --contact-form-background-color: #ffffff;
+  --submit-button-background-color: #ff6f61; /* Consistent with CTA */
+  --submit-button-text-color: #ffffff;
+  --submit-button-hover-background-color: #e55a50; /* Darker coral on hover */
+  --feature-heading-color: #ff6f61; /* Warm coral */
+  --feature-text-color: #4a4a4a;
+  --footer-background-color: #ff6f61; /* Warm coral for footer */
+  --footer-text-color: #ffffff;
+  --footer-link-color: #ffffff;
+  --footer-icon-color: #ffffff;
+  --header-background-color: #ff6f61; /* Warm coral for header */
+  --header-text-color: #ffffff;
+  --header-link-color: #ffffff;
+  --header-link-hover-color: #ffb3b3; /* Light pink on hover */
+  --hero-background-color: #ff6f61; /* Warm coral for hero section */
+  --hero-text-color: #ffffff;
+}
