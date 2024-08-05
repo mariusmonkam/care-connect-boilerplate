@@ -152,8 +152,17 @@ export interface AppointmentSchedulerData extends BaseSectionData {
 export interface HomePageData {
   sections: (
     | HeroSectionData
+    | TrustedBySectionData
     | FeatureSectionData
+    | BlogPreviewData
     | CallToActionData
+    | UserReviewsData
+    | AppIntegrationsData
+    | PricingTiersData
+    | FeatureComparisonData
+    | FAQData
+    | MedicalRecordViewerData
+    | DoctorCollaborationBoardData
     | PatientDashboardData
     | AppointmentSchedulerData
   )[];
@@ -162,7 +171,6 @@ export interface HomePageData {
 export interface PatientFollowUpPageData {
   sections: (
     | HeroSectionData
-    | FeatureSectionData
     | PatientDashboardData
     | MedicalRecordViewerData
   )[];
@@ -171,15 +179,14 @@ export interface PatientFollowUpPageData {
 export interface DoctorCollaborationPageData {
   sections: (
     | HeroSectionData
-    | FeatureSectionData
     | DoctorCollaborationBoardData
+    | FeatureSectionData
   )[];
 }
 
 export interface PatientPortalPageData {
   sections: (
     | HeroSectionData
-    | FeatureSectionData
     | PatientDashboardData
     | AppointmentSchedulerData
     | MedicalRecordViewerData
@@ -198,6 +205,19 @@ export interface ContactPageData {
   phone: string;
   email: string;
   sections: (ContactInfoData | CallToActionData)[];
+}
+
+// Mission data interface
+export interface MissionData {
+  title: string;
+  description: string;
+}
+
+// Team member data interface
+export interface TeamMemberData {
+  name: string;
+  role: string;
+  image: string;
 }
 
 // Footer data interface
@@ -258,7 +278,6 @@ export interface AppData {
 }
 
 // Additional interfaces for future development
-
 export interface User {
   id: string;
   name: string;

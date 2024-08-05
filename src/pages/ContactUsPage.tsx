@@ -1,8 +1,8 @@
 // src/pages/AboutUsPage.tsx
 
 import React from "react";
-import { appData } from "../data/appData";
 import PageConfigurator from "../components/PageConfigurator";
+import appData from "../data/appData";
 
 const ContactUsPage: React.FC = () => {
   return (

@@ -1,3 +1,5 @@
+// src/components/PageConfigurator.tsx
+
 import React from "react";
 import HeroSection from "./common/HeroSection";
 import TrustedBySection from "./common/TrustedBySection";
@@ -14,12 +16,14 @@ import ContactInfo from "./common/ContactInfo";
 import BlogPost from "./common/BlogPost";
 import MissionSection from "./common/MissionSection";
 import TeamSection from "./common/TeamSection";
+
+// Import medical-specific components
+import PatientDashboard from "./common/care/PatientDashboard";
+import DoctorCollaborationBoard from "./common/care/DoctorCollaborationBoard";
+
 import {
   HomePageData,
-  PricingPageData,
   ContactPageData,
-  BlogPageData,
-  ProductPageData,
   AboutPageData,
   HeroSectionData,
   TrustedBySectionData,
@@ -33,17 +37,17 @@ import {
   FAQData,
   ContactInfoData,
   BlogPostData,
+  PatientDashboardData,
+  DoctorCollaborationBoardData,
+  MedicalRecordViewerData,
+  AppointmentSchedulerData,
 } from "../types/interfaces";
 import "../styles/PageConfigurator.css";
+import MedicalRecordViewer from "./common/care/MedicalRecoradViewer";
+import AppointmentScheduler from "./common/care/AppointmentSheduler";
 
 interface PageConfiguratorProps {
-  pageData:
-    | HomePageData
-    | PricingPageData
-    | ContactPageData
-    | BlogPageData
-    | ProductPageData
-    | AboutPageData;
+  pageData: HomePageData | ContactPageData | AboutPageData;
   pageName: string;
 }
 
@@ -60,7 +64,7 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
   ) {
     return (
       <div className={`${commonPageStyles} ${pageName}`}>
-        {pageData.sections.map((section, index) => {
+        {pageData.sections.map((section, index: number) => {
           switch (section.type) {
             case "HeroSection":
               return (
@@ -112,8 +116,35 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
               );
             case "FAQ":
               return <FAQ key={index} {...(section as FAQData)} />;
-            case "BlogPost":
-              return <BlogPost key={index} {...(section as BlogPostData)} />;
+
+            case "PatientDashboard":
+              return (
+                <PatientDashboard
+                  key={index}
+                  {...(section as PatientDashboardData)}
+                />
+              );
+            case "DoctorCollaborationBoard":
+              return (
+                <DoctorCollaborationBoard
+                  key={index}
+                  {...(section as DoctorCollaborationBoardData)}
+                />
+              );
+            case "MedicalRecordViewer":
+              return (
+                <MedicalRecordViewer
+                  key={index}
+                  {...(section as MedicalRecordViewerData)}
+                />
+              );
+            case "AppointmentScheduler":
+              return (
+                <AppointmentScheduler
+                  key={index}
+                  {...(section as AppointmentSchedulerData)}
+                />
+              );
             default:
               return null;
           }
@@ -123,60 +154,21 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
   }
 
   if (pageName === "contact") {
-    if (
-      "address" in pageData &&
-      "phone" in pageData &&
-      "email" in pageData &&
-      "sections" in pageData
-    ) {
-      const contactData = pageData as ContactPageData;
-      return (
-        <div className={`${commonPageStyles} ${pageName}`}>
-          <ContactForm />
-          <ContactInfo
-            address={contactData.address}
-            phone={contactData.phone}
-            email={contactData.email}
-          />
-          {contactData.sections.map((section, index) => {
-            switch (section.type) {
-              case "ContactInfo":
-                return (
-                  <ContactInfo key={index} {...(section as ContactInfoData)} />
-                );
-              case "CallToAction":
-                return (
-                  <CallToAction
-                    key={index}
-                    {...(section as CallToActionData)}
-                  />
-                );
-              default:
-                return null;
-            }
-          })}
-        </div>
-      );
-    }
+    return (
+      <div className={commonPageStyles}>
+        <ContactInfo {...(pageData as ContactPageData)} />
+        <ContactForm />
+      </div>
+    );
   }
 
   if (pageName === "about") {
-    if (
-      "hero" in pageData &&
-      "mission" in pageData &&
-      "team" in pageData &&
-      "callToAction" in pageData
-    ) {
-      const aboutData = pageData as AboutPageData;
-      return (
-        <div className={`${commonPageStyles} ${pageName}`}>
-          <HeroSection {...aboutData.hero} />
-          <MissionSection {...aboutData.mission} />
-          <TeamSection team={aboutData.team} />
-          <CallToAction {...aboutData.callToAction} />
-        </div>
-      );
-    }
+    return (
+      <div className={commonPageStyles}>
+        <MissionSection {...(pageData as AboutPageData).mission} />
+        <CallToAction {...(pageData as AboutPageData).callToAction} />
+      </div>
+    );
   }
 
   return null;

@@ -1,15 +1,19 @@
 // src/data/appData.ts
 
 import { AppData } from "../types/interfaces";
+const heroImage = require("../assets/care_connect_hero_image.jpeg");
+const keyFeaturesImage = require("../assets/care_connect_key_features_image.jpeg");
 
-export const appData: AppData = {
+// Sample app data with updated sections and new types
+
+const appData: AppData = {
   companyName: "Care-Connect",
   navigation: [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "/home" },
     { name: "Patient Follow-Up", href: "/patient-follow-up" },
     { name: "Doctor Collaboration", href: "/doctor-collaboration" },
     { name: "Patient Portal", href: "/patient-portal" },
-    { name: "About", href: "/about" },
+    { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ],
   pages: {
@@ -18,23 +22,23 @@ export const appData: AppData = {
         {
           type: "HeroSection",
           title: "Welcome to Care-Connect",
-          subtitle: "Revolutionizing Healthcare Communication",
+          subtitle: "Connecting Patients and Providers",
           ctaText: "Get Started",
-          image: "https://example.com/images/healthcare-hero.jpg",
+          image: heroImage,
         },
         {
           type: "FeatureSection",
-          title: "Streamlined Patient Care",
+          title: "Comprehensive Care Solutions",
           description:
-            "Efficiently manage patient information and appointments.",
-          image: "https://example.com/images/patient-care.jpg",
+            "Our platform offers a range of features to manage your health seamlessly.",
+          image: keyFeaturesImage,
           ctaText: "Learn More",
           imagePosition: "right",
         },
         {
           type: "CallToAction",
-          title: "Ready to transform your practice?",
-          ctaText: "Sign Up Now",
+          title: "Ready to Make a Difference?",
+          ctaText: "Join Us",
         },
         {
           type: "PatientDashboard",
@@ -43,11 +47,20 @@ export const appData: AppData = {
             {
               date: "2024-08-15",
               doctorName: "Dr. Smith",
-              purpose: "Annual Checkup",
+              purpose: "Annual Check-up",
             },
+            { date: "2024-08-20", doctorName: "Dr. Lee", purpose: "Follow-up" },
           ],
           recentTestResults: [
-            { date: "2024-07-30", testName: "Blood Test", result: "Normal" },
+            { date: "2024-08-01", testName: "Blood Test", result: "Normal" },
+            { date: "2024-07-25", testName: "X-Ray", result: "Clear" },
+          ],
+        },
+        {
+          type: "AppointmentScheduler",
+          availableSlots: [
+            { date: "2024-08-10", time: "09:00", doctorName: "Dr. Brown" },
+            { date: "2024-08-12", time: "14:00", doctorName: "Dr. Green" },
           ],
         },
       ],
@@ -57,22 +70,22 @@ export const appData: AppData = {
         {
           type: "HeroSection",
           title: "Patient Follow-Up",
-          subtitle: "Ensuring Continuous Care",
-          ctaText: "View Patients",
-          image: "https://example.com/images/follow-up.jpg",
+          subtitle: "Stay on top of your health",
+          ctaText: "Schedule Follow-Up",
+          image: "/images/follow-up-hero.jpg",
         },
         {
           type: "PatientDashboard",
-          patientName: "Jane Smith",
+          patientName: "Jane Doe",
           upcomingAppointments: [
             {
-              date: "2024-08-20",
-              doctorName: "Dr. Johnson",
-              purpose: "Post-op Check",
+              date: "2024-08-18",
+              doctorName: "Dr. White",
+              purpose: "Consultation",
             },
           ],
           recentTestResults: [
-            { date: "2024-08-01", testName: "X-Ray", result: "Clear" },
+            { date: "2024-07-30", testName: "MRI", result: "Pending" },
           ],
         },
         {
@@ -80,11 +93,15 @@ export const appData: AppData = {
           patientId: "12345",
           records: [
             {
-              date: "2024-07-01",
-              type: "Prescription",
-              details: "Amoxicillin 500mg",
+              date: "2024-06-15",
+              type: "Consultation",
+              details: "Initial consultation with Dr. Black",
             },
-            { date: "2024-06-15", type: "Diagnosis", details: "Sinusitis" },
+            {
+              date: "2024-07-01",
+              type: "Lab Results",
+              details: "Blood sugar levels checked",
+            },
           ],
         },
       ],
@@ -93,35 +110,35 @@ export const appData: AppData = {
       sections: [
         {
           type: "HeroSection",
-          title: "Doctor Collaboration Platform",
-          subtitle: "Working Together for Better Outcomes",
-          ctaText: "Join a Case",
-          image: "https://example.com/images/doctor-collab.jpg",
+          title: "Doctor Collaboration",
+          subtitle: "Work together for better patient outcomes",
+          ctaText: "Start Collaborating",
+          image: "/images/collaboration-hero.jpg",
         },
         {
           type: "DoctorCollaborationBoard",
           cases: [
             {
-              id: "C001",
-              patientName: "Alice Brown",
-              condition: "Complex Cardiac Case",
+              id: "case1",
+              patientName: "Alice Johnson",
+              condition: "Diabetes",
               status: "Open",
             },
             {
-              id: "C002",
-              patientName: "Bob Wilson",
-              condition: "Rare Genetic Disorder",
-              status: "In Progress",
+              id: "case2",
+              patientName: "Bob Brown",
+              condition: "Hypertension",
+              status: "In-Progress",
             },
           ],
         },
         {
           type: "FeatureSection",
-          title: "Secure Collaboration",
+          title: "Features for Doctors",
           description:
-            "Discuss cases securely with colleagues from around the world.",
-          image: "https://example.com/images/secure-collab.jpg",
-          ctaText: "Learn More",
+            "Collaborate on patient cases, share insights, and improve care.",
+          image: "/images/doctor-features.jpg",
+          ctaText: "Explore Features",
           imagePosition: "left",
         },
       ],
@@ -131,33 +148,28 @@ export const appData: AppData = {
         {
           type: "HeroSection",
           title: "Patient Portal",
-          subtitle: "Your Health Information at Your Fingertips",
-          ctaText: "Access Records",
-          image: "https://example.com/images/patient-portal.jpg",
+          subtitle: "Your health, your control",
+          ctaText: "Access Portal",
+          image: "/images/portal-hero.jpg",
         },
         {
           type: "PatientDashboard",
-          patientName: "Emma Davis",
+          patientName: "Emily Carter",
           upcomingAppointments: [
             {
-              date: "2024-09-01",
-              doctorName: "Dr. Lee",
-              purpose: "Vaccination",
+              date: "2024-08-22",
+              doctorName: "Dr. Wilson",
+              purpose: "Routine Check-up",
             },
           ],
           recentTestResults: [
-            {
-              date: "2024-08-15",
-              testName: "Cholesterol",
-              result: "Slightly Elevated",
-            },
+            { date: "2024-07-28", testName: "ECG", result: "Normal" },
           ],
         },
         {
           type: "AppointmentScheduler",
           availableSlots: [
-            { date: "2024-09-10", time: "10:00 AM", doctorName: "Dr. Garcia" },
-            { date: "2024-09-11", time: "2:00 PM", doctorName: "Dr. Patel" },
+            { date: "2024-08-15", time: "10:00", doctorName: "Dr. Adams" },
           ],
         },
         {
@@ -165,14 +177,9 @@ export const appData: AppData = {
           patientId: "67890",
           records: [
             {
-              date: "2024-08-01",
-              type: "Lab Result",
-              details: "Cholesterol Test",
-            },
-            {
-              date: "2024-07-15",
-              type: "Doctor's Note",
-              details: "Follow-up on medication",
+              date: "2024-07-10",
+              type: "Consultation",
+              details: "Consulted with Dr. Roberts",
             },
           ],
         },
@@ -181,101 +188,87 @@ export const appData: AppData = {
     about: {
       hero: {
         type: "HeroSection",
-        title: "About Care-Connect",
-        subtitle: "Our Mission and Vision",
-        ctaText: "Join Our Team",
-        image: "https://example.com/images/about-hero.jpg",
+        title: "About Us",
+        subtitle: "Learn more about our mission and team",
+        ctaText: "Contact Us",
+        image: "/images/about-hero.jpg",
       },
       mission: {
         title: "Our Mission",
         description:
-          "To revolutionize healthcare communication and improve patient outcomes through innovative technology.",
+          "To provide seamless healthcare solutions that connect patients and providers efficiently.",
       },
       team: [
         {
-          name: "Dr. Sarah Johnson",
+          name: "Dr. Samantha Green",
           role: "Chief Medical Officer",
-          image: "https://example.com/images/sarah-johnson.jpg",
+          image: "/images/team-samantha.jpg",
         },
-        {
-          name: "Michael Chen",
-          role: "Chief Technology Officer",
-          image: "https://example.com/images/michael-chen.jpg",
-        },
-        {
-          name: "Emily Rodriguez",
-          role: "Head of Patient Relations",
-          image: "https://example.com/images/emily-rodriguez.jpg",
-        },
+        { name: "Alex Johnson", role: "CTO", image: "/images/team-alex.jpg" },
       ],
       callToAction: {
         type: "CallToAction",
-        title: "Join us in transforming healthcare",
-        ctaText: "See Open Positions",
+        title: "Join Our Team",
+        ctaText: "Apply Now",
       },
     },
     contact: {
-      address: "123 Health Street, Medical City, MC 12345",
+      address: "123 Health St, MedCity, TX 75001",
       phone: "+1 (555) 123-4567",
       email: "info@care-connect.com",
       sections: [
         {
           type: "ContactInfo",
-          address: "123 Health Street, Medical City, MC 12345",
+          address: "123 Health St, MedCity, TX 75001",
           phone: "+1 (555) 123-4567",
           email: "info@care-connect.com",
         },
         {
           type: "CallToAction",
-          title: "Have questions? We're here to help!",
-          ctaText: "Contact Us Now",
+          title: "Get in Touch",
+          ctaText: "Send Us a Message",
         },
       ],
     },
   },
   footer: {
-    companyInfo: "© 2024 Care-Connect. All rights reserved.",
+    companyInfo: "Care-Connect | Providing Seamless Healthcare Solutions",
     companyLinks: [
-      { name: "Home", href: "/" },
-      { name: "About Us", href: "/about" },
-      { name: "Services", href: "/services" },
-      { name: "Careers", href: "/careers" },
-    ],
-    socialLinks: [
-      { name: "Facebook", href: "https://facebook.com/care-connect" },
-      { name: "Twitter", href: "https://twitter.com/care-connect" },
-      { name: "LinkedIn", href: "https://linkedin.com/company/care-connect" },
-    ],
-    legalLinks: [
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms of Service", href: "/terms" },
-      { name: "HIPAA Compliance", href: "/hipaa" },
     ],
+    socialLinks: [
+      { name: "Facebook", href: "https://facebook.com/careconnect" },
+      { name: "Twitter", href: "https://twitter.com/careconnect" },
+    ],
+    legalLinks: [{ name: "Legal Notices", href: "/legal" }],
   },
   theme: {
-    "background-color": "#f0f8ff",
+    "background-color": "#f5f5f5",
     "body-background-color": "#ffffff",
     "text-color": "#333333",
-    "cta-background-color": "#4169e1",
+    "cta-background-color": "#007bff",
     "cta-text-color": "#ffffff",
-    "cta-button-background-color": "#ffffff",
-    "cta-button-text-color": "#4169e1",
-    "cta-button-hover-background-color": "#e6e6fa",
+    "cta-button-background-color": "#007bff",
+    "cta-button-text-color": "#ffffff",
+    "cta-button-hover-background-color": "#0056b3",
     "contact-form-background-color": "#ffffff",
-    "submit-button-background-color": "#4169e1",
+    "submit-button-background-color": "#28a745",
     "submit-button-text-color": "#ffffff",
-    "submit-button-hover-background-color": "#3255b2",
-    "feature-heading-color": "#2c3e50",
-    "feature-text-color": "#34495e",
-    "footer-background-color": "#2c3e50",
-    "footer-text-color": "#ecf0f1",
-    "footer-link-color": "#bdc3c7",
-    "footer-icon-color": "#ecf0f1",
-    "header-background-color": "#4169e1",
+    "submit-button-hover-background-color": "#218838",
+    "feature-heading-color": "#333333",
+    "feature-text-color": "#666666",
+    "footer-background-color": "#222222",
+    "footer-text-color": "#ffffff",
+    "footer-link-color": "#007bff",
+    "footer-icon-color": "#ffffff",
+    "header-background-color": "#007bff",
     "header-text-color": "#ffffff",
     "header-link-color": "#ffffff",
-    "header-link-hover-color": "#e6e6fa",
-    "hero-background-color": "#4169e1",
+    "header-link-hover-color": "#f5f5f5",
+    "hero-background-color": "#007bff",
     "hero-text-color": "#ffffff",
   },
 };
+
+export default appData;

@@ -1,0 +1,75 @@
+/* src/styles/PatienPortal.css */
+
+.patient-dashboard {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient-dashboard h2 {
+  margin-bottom: 20px;
+}
+
+.patient-dashboard h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.patient-dashboard p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.patient-dashboard ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.patient-dashboard li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.patient-dashboard li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .patient-dashboard {
+    padding: 15px;
+  }
+
+  .patient-dashboard h2,
+  .patient-dashboard h3 {
+    font-size: 1.5em;
+  }
+
+  .patient-dashboard p {
+    font-size: 1.1em;
+  }
+
+  .patient-dashboard li {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-dashboard {
+    padding: 10px;
+  }
+
+  .patient-dashboard h2,
+  .patient-dashboard h3 {
+    font-size: 1.2em;
+  }
+
+  .patient-dashboard p {
+    font-size: 1em;
+  }
+
+  .patient-dashboard li {
+    padding: 5px 0;
+  }
+}

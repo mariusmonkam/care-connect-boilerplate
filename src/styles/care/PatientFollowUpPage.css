@@ -1,0 +1,30 @@
+/* src/styles/PatientFollowUpPage.css */
+.patientFollowUp {
+  padding: 20px;
+}
+
+/* General styles for sections */
+.patientFollowUp section {
+  margin-bottom: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .patientFollowUp {
+    padding: 10px;
+  }
+
+  .patientFollowUp section {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patientFollowUp {
+    padding: 5px;
+  }
+
+  .patientFollowUp section {
+    margin-bottom: 10px;
+  }
+}

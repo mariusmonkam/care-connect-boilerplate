@@ -1,0 +1,30 @@
+/* src/styles/DoctorCollaborationPage.css */
+.doctorCollaboration {
+  padding: 20px;
+}
+
+/* General styles for sections */
+.doctorCollaboration section {
+  margin-bottom: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .doctorCollaboration {
+    padding: 10px;
+  }
+
+  .doctorCollaboration section {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctorCollaboration {
+    padding: 5px;
+  }
+
+  .doctorCollaboration section {
+    margin-bottom: 10px;
+  }
+}

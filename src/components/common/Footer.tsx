@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Footer.css";
-import { appData } from "../../data/appData";
+import appData from "../../data/appData";
 
 const socialIcons = {
   Facebook: (
@@ -72,14 +72,7 @@ const Footer: React.FC = () => {
               ))}
             </div>
           </div>
-          <div className="footer-section integrations-links">
-            <h4>Integrations</h4>
-            {appData.footer.integrationsLinks.map((link, index) => (
-              <a key={index} href={link.href} aria-label={link.name}>
-                {link.name}
-              </a>
-            ))}
-          </div>
+
           <div className="footer-section legal-links">
             <h4>Legal</h4>
             {appData.footer.legalLinks.map((link, index) => (
