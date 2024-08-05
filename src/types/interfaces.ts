@@ -1,7 +1,7 @@
 // src/types/interfaces.ts
 
 // Base type for sections with common properties
-interface BaseSectionData {
+export interface BaseSectionData {
   type: string;
 }
 
@@ -25,7 +25,7 @@ export interface FeatureSectionData extends BaseSectionData {
   description: string;
   image: string;
   ctaText: string;
-  imagePosition: "left" | "right"; // Adjust if needed
+  imagePosition: "left" | "right";
 }
 
 export interface BlogPreviewData extends BaseSectionData {
@@ -45,50 +45,47 @@ export interface CallToActionData extends BaseSectionData {
   ctaText: string;
 }
 
-export interface MissionData {
-  title: string;
-  description: string;
-}
-
-export interface TeamMemberData {
-  name: string;
-  role: string;
-  image: string;
-}
-
-export interface UserReview {
-  reviewer: string;
-  review: string;
-}
-
 export interface UserReviewsData extends BaseSectionData {
   type: "UserReviews";
-  reviews: UserReview[];
-}
-
-export interface AppIntegration {
-  name: string;
-  logo: string;
+  reviews: Array<{
+    reviewer: string;
+    review: string;
+  }>;
 }
 
 export interface AppIntegrationsData extends BaseSectionData {
   type: "AppIntegrations";
-  integrations: AppIntegration[];
+  integrations: Array<{
+    name: string;
+    logo: string;
+  }>;
 }
 
 export interface PricingTiersData extends BaseSectionData {
   type: "PricingTiers";
-  tiers: Array<{ name: string; price: string; features: string[] }>;
+  tiers: Array<{
+    name: string;
+    price: string;
+    features: string[];
+  }>;
 }
 
 export interface FeatureComparisonData extends BaseSectionData {
   type: "FeatureComparison";
-  features: Array<{ feature: string; description: string }>;
+  features: Array<{
+    feature: string;
+    description: string;
+  }>;
 }
 
 export interface FAQData extends BaseSectionData {
   type: "FAQ";
-  faqs: Array<{ question: string; answer: string }>;
+  title: string;
+  subtitle: string;
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
 }
 
 export interface ContactInfoData extends BaseSectionData {
@@ -106,39 +103,87 @@ export interface BlogPostData extends BaseSectionData {
   author: string;
 }
 
+// New interfaces for medical-specific components
+export interface PatientDashboardData extends BaseSectionData {
+  type: "PatientDashboard";
+  patientName: string;
+  upcomingAppointments: Array<{
+    date: string;
+    doctorName: string;
+    purpose: string;
+  }>;
+  recentTestResults: Array<{
+    date: string;
+    testName: string;
+    result: string;
+  }>;
+}
+
+export interface DoctorCollaborationBoardData extends BaseSectionData {
+  type: "DoctorCollaborationBoard";
+  cases: Array<{
+    id: string;
+    patientName: string;
+    condition: string;
+    status: string;
+  }>;
+}
+
+export interface MedicalRecordViewerData extends BaseSectionData {
+  type: "MedicalRecordViewer";
+  patientId: string;
+  records: Array<{
+    date: string;
+    type: string;
+    details: string;
+  }>;
+}
+
+export interface AppointmentSchedulerData extends BaseSectionData {
+  type: "AppointmentScheduler";
+  availableSlots: Array<{
+    date: string;
+    time: string;
+    doctorName: string;
+  }>;
+}
+
 // Page data interfaces
 export interface HomePageData {
   sections: (
     | HeroSectionData
-    | TrustedBySectionData
     | FeatureSectionData
-    | BlogPreviewData
     | CallToActionData
-    | UserReviewsData
-    | AppIntegrationsData
-    | PricingTiersData
-    | FeatureComparisonData
-    | FAQData
+    | PatientDashboardData
+    | AppointmentSchedulerData
   )[];
 }
 
-export interface PricingPageData {
-  sections: (HeroSectionData | PricingTiersData | CallToActionData | FAQData)[];
+export interface PatientFollowUpPageData {
+  sections: (
+    | HeroSectionData
+    | FeatureSectionData
+    | PatientDashboardData
+    | MedicalRecordViewerData
+  )[];
 }
 
-export interface ContactPageData {
-  address: string;
-  phone: string;
-  email: string;
-  sections: (ContactInfoData | CallToActionData)[];
+export interface DoctorCollaborationPageData {
+  sections: (
+    | HeroSectionData
+    | FeatureSectionData
+    | DoctorCollaborationBoardData
+  )[];
 }
 
-export interface BlogPageData {
-  sections: (BlogPostData | BlogPreviewData)[];
-}
-
-export interface ProductPageData {
-  sections: (HeroSectionData | FeatureSectionData | CallToActionData)[];
+export interface PatientPortalPageData {
+  sections: (
+    | HeroSectionData
+    | FeatureSectionData
+    | PatientDashboardData
+    | AppointmentSchedulerData
+    | MedicalRecordViewerData
+  )[];
 }
 
 export interface AboutPageData {
@@ -148,8 +193,14 @@ export interface AboutPageData {
   callToAction: CallToActionData;
 }
 
-// src/types/interfaces.ts
+export interface ContactPageData {
+  address: string;
+  phone: string;
+  email: string;
+  sections: (ContactInfoData | CallToActionData)[];
+}
 
+// Footer data interface
 export interface FooterLink {
   name: string;
   href: string;
@@ -157,64 +208,120 @@ export interface FooterLink {
 
 export interface FooterData {
   companyInfo: string;
+  companyLinks: FooterLink[];
   socialLinks: FooterLink[];
   legalLinks: FooterLink[];
-  companyLinks: FooterLink[];
-  integrationsLinks: FooterLink[];
 }
 
-export interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-export interface FAQData extends BaseSectionData {
-  type: "FAQ";
-  title: string;
-  subtitle: string;
-  faqs: FAQItem[];
-}
-
-// interfaces.ts
+// Theme interface
 export interface Theme {
-  "background-color"?: string;
-  "body-background-color"?: string;
-  "text-color"?: string;
-  "cta-background-color"?: string;
-  "cta-text-color"?: string;
-  "cta-button-background-color"?: string;
-  "cta-button-text-color"?: string;
-  "cta-button-hover-background-color"?: string;
-  "contact-form-background-color"?: string;
-  "submit-button-background-color"?: string;
-  "submit-button-text-color"?: string;
-  "submit-button-hover-background-color"?: string;
-  "feature-heading-color"?: string;
-  "feature-text-color"?: string;
-  "footer-background-color"?: string;
-  "footer-text-color"?: string;
-  "footer-link-color"?: string;
-  "footer-icon-color"?: string;
-  "header-background-color"?: string;
-  "header-text-color"?: string;
-  "header-link-color"?: string;
-  "header-link-hover-color"?: string;
-  "hero-background-color"?: string;
-  "hero-text-color"?: string;
+  "background-color": string;
+  "body-background-color": string;
+  "text-color": string;
+  "cta-background-color": string;
+  "cta-text-color": string;
+  "cta-button-background-color": string;
+  "cta-button-text-color": string;
+  "cta-button-hover-background-color": string;
+  "contact-form-background-color": string;
+  "submit-button-background-color": string;
+  "submit-button-text-color": string;
+  "submit-button-hover-background-color": string;
+  "feature-heading-color": string;
+  "feature-text-color": string;
+  "footer-background-color": string;
+  "footer-text-color": string;
+  "footer-link-color": string;
+  "footer-icon-color": string;
+  "header-background-color": string;
+  "header-text-color": string;
+  "header-link-color": string;
+  "header-link-hover-color": string;
+  "hero-background-color": string;
+  "hero-text-color": string;
 }
 
-// Main App Data
+// Main App Data interface
 export interface AppData {
   companyName: string;
   navigation: Array<{ name: string; href: string }>;
   pages: {
     home: HomePageData;
-    pricing: PricingPageData;
-    contact: ContactPageData;
-    blog: BlogPageData;
-    product: ProductPageData;
+    patientFollowUp: PatientFollowUpPageData;
+    doctorCollaboration: DoctorCollaborationPageData;
+    patientPortal: PatientPortalPageData;
     about: AboutPageData;
+    contact: ContactPageData;
   };
   footer: FooterData;
   theme: Theme;
+}
+
+// Additional interfaces for future development
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: "patient" | "doctor" | "nurse" | "admin";
+}
+
+export interface Patient extends User {
+  dateOfBirth: string;
+  medicalHistory: string[];
+  currentMedications: string[];
+}
+
+export interface Doctor extends User {
+  specialty: string;
+  licenseNumber: string;
+}
+
+export interface Appointment {
+  id: string;
+  patientId: string;
+  doctorId: string;
+  date: string;
+  time: string;
+  purpose: string;
+  status: "scheduled" | "completed" | "cancelled";
+}
+
+export interface MedicalRecord {
+  id: string;
+  patientId: string;
+  date: string;
+  type: string;
+  details: string;
+  doctorId: string;
+}
+
+export interface TestResult {
+  id: string;
+  patientId: string;
+  testName: string;
+  date: string;
+  result: string;
+  doctorId: string;
+}
+
+export interface Prescription {
+  id: string;
+  patientId: string;
+  doctorId: string;
+  medicationName: string;
+  dosage: string;
+  frequency: string;
+  startDate: string;
+  endDate: string;
+}
+
+export interface CollaborationCase {
+  id: string;
+  patientId: string;
+  primaryDoctorId: string;
+  collaboratingDoctors: string[];
+  condition: string;
+  status: "open" | "in-progress" | "resolved";
+  notes: string[];
 }
