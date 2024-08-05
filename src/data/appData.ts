@@ -1,303 +1,276 @@
-import { AppData } from "../types/interfaces";
+// src/data/appData.ts
 
-export const appData: AppData = {
-  companyName: "React Business Starter",
+import { AppData } from "../types/interfaces";
+const heroImage = require("../assets/care_connect_hero_image.jpeg");
+const keyFeaturesImage = require("../assets/care_connect_key_features_image.jpeg");
+const collaborationImage = require("../assets/doctor_collaboration_image.jpg");
+
+const appData: AppData = {
+  companyName: "Care-Connect",
   navigation: [
-    { name: "Home", href: "/" },
-    { name: "Product", href: "/product" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "About", href: "/about" },
+    { name: "Home", href: "/home" },
+    { name: "Doctor Collaboration", href: "/doctor-collaboration" },
+    { name: "Patient Portal", href: "/patient-portal" },
+    { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
-    { name: "Blog", href: "/blog" },
   ],
   pages: {
     home: {
       sections: [
         {
           type: "HeroSection",
-          title: "Welcome to React Business Starter",
-          subtitle: "Your journey starts here",
+          title: "Welcome to Care-Connect",
+          subtitle: "Connecting Patients and Providers",
           ctaText: "Get Started",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-        },
-        {
-          type: "TrustedBySection",
-          logos: [
-            { src: "https://via.placeholder.com/150", alt: "Company 1" },
-            { src: "https://via.placeholder.com/150", alt: "Company 2" },
-            { src: "https://via.placeholder.com/150", alt: "Company 3" },
-          ],
+          image: heroImage,
         },
         {
           type: "FeatureSection",
-          title: "Our Key Features",
-          description: "Discover what makes React Business Starter unique",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+          title: "Comprehensive Care Solutions",
+          description:
+            "Our platform offers a range of features to manage your health seamlessly.",
+          image: keyFeaturesImage,
           ctaText: "Learn More",
           imagePosition: "right",
         },
         {
-          type: "FeatureSection",
-          title: "Our Key Features",
-          description: "Discover what makes React Business Starter unique",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-          ctaText: "Learn More",
-          imagePosition: "left",
-        },
-        {
-          type: "FeatureSection",
-          title: "Our Key Features",
-          description: "Discover what makes React Business Starter unique",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-          ctaText: "Learn More",
-          imagePosition: "right",
-        },
-
-        {
           type: "CallToAction",
-          title: "Ready to get started?",
-          ctaText: "Sign Up Now",
+          title: "Ready to Make a Difference?",
+          ctaText: "Join Us",
         },
         {
-          type: "UserReviews",
-          reviews: [
+          type: "PatientDashboard",
+          patientName: "John Doe",
+          upcomingAppointments: [
             {
-              reviewer: "John Doe",
-              review: "Great product! Highly recommended.",
+              date: "2024-08-15",
+              doctorName: "Dr. Smith",
+              purpose: "Annual Check-up",
             },
-            {
-              reviewer: "Jane Smith",
-              review: "React Business Starter has transformed our business.",
-            },
+            { date: "2024-08-20", doctorName: "Dr. Lee", purpose: "Follow-up" },
           ],
-        },
-      ],
-    },
-    pricing: {
-      sections: [
-        {
-          type: "HeroSection",
-          title: "Simple, Transparent Pricing",
-          subtitle: "Choose the plan that's right for you",
-          ctaText: "Get Started",
-          image: "https://via.placeholder.com/1080x720",
-        },
-        {
-          type: "PricingTiers",
-          tiers: [
-            {
-              name: "Basic",
-              price: "$9.99/mo",
-              features: ["Feature 1", "Feature 2", "Feature 3"],
-            },
-            {
-              name: "Pro",
-              price: "$19.99/mo",
-              features: ["Everything in Basic", "Feature 4", "Feature 5"],
-            },
-            {
-              name: "Enterprise",
-              price: "Contact Us",
-              features: [
-                "Custom Solutions",
-                "Priority Support",
-                "Dedicated Account Manager",
-              ],
-            },
+          recentTestResults: [
+            { date: "2024-08-01", testName: "Blood Test", result: "Normal" },
+            { date: "2024-07-25", testName: "X-Ray", result: "Clear" },
           ],
-        },
-        {
-          type: "CallToAction",
-          title: "Ready to get started?",
-          ctaText: "Sign Up Now",
-        },
-        {
-          type: "FAQ",
-          title: "Frequently Asked Questions",
-          subtitle: "Get the answers to our most commonly asked questions.",
-          faqs: [
-            {
-              question: "What payment methods do you accept?",
-              answer:
-                "We accept major credit cards (Visa, Mastercard, American Express) as well as PayPal.",
-            },
-            {
-              question: "Do you have a trial version?",
-              answer:
-                "Yes, we do! And you can try it just by signing up on our website.",
-            },
-            {
-              question: "How can I contact customer support?",
-              answer:
-                "You can reach our customer support team by phone, email, or live chat. Our support hours are Monday through Friday, 9am to 5pm EST.",
-            },
-            {
-              question: "Are you hiring?",
-              answer:
-                "We always welcome skilled people to our team. Check out our Careers page for current openings.",
-            },
+          medications: [
+            { name: "Aspirin", dosage: "75mg", frequency: "Daily" },
+            { name: "Metformin", dosage: "500mg", frequency: "Twice a day" },
           ],
-        },
-      ],
-    },
-    contact: {
-      address: "123 Main St",
-      phone: "555-555-5555",
-      email: "contact@React Business Starter.com",
-      sections: [
-        {
-          type: "ContactInfo",
-          address: "123 Main St",
-          phone: "555-555-5555",
-          email: "contact@React Business Starter.com",
-        },
-      ],
-    },
-    blog: {
-      sections: [
-        {
-          type: "BlogPreview",
-          posts: [
+          recentVisits: [
             {
-              title: "The Future of Technology",
-              excerpt:
-                "Explore the latest advancements in technology and their impact on our lives.",
-              date: "2024-07-25",
-              author: "Jane Doe",
-              image:
-                "https://via.placeholder.com/1080x720?text=The+Future+of+Technology",
-            },
-            {
-              title: "Understanding Artificial Intelligence",
-              excerpt:
-                "A deep dive into the principles and applications of artificial intelligence.",
-              date: "2024-07-20",
-              author: "John Smith",
-              image:
-                "https://via.placeholder.com/1080x720?text=Understanding+Artificial+Intelligence",
-            },
-            {
-              title: "The Rise of Remote Work",
-              excerpt:
-                "How remote work is changing the landscape of the modern workplace.",
-              date: "2024-07-18",
-              author: "Emily Johnson",
-              image:
-                "https://via.placeholder.com/1080x720?text=The+Rise+of+Remote+Work",
-            },
-            {
-              title: "Advancements in Machine Learning",
-              excerpt:
-                "Key advancements in machine learning and their implications for various industries.",
-              date: "2024-07-15",
-              author: "Michael Brown",
-              image:
-                "https://via.placeholder.com/1080x720?text=Advancements+in+Machine+Learning",
-            },
-            {
-              title: "Cybersecurity Trends to Watch",
-              excerpt:
-                "The latest trends in cybersecurity and how to protect your business.",
-              date: "2024-07-10",
-              author: "Sarah Wilson",
-              image:
-                "https://via.placeholder.com/1080x720?text=Cybersecurity+Trends+to+Watch",
-            },
-            {
-              title: "Exploring Quantum Computing",
-              excerpt: "A beginner's guide to understanding quantum computing.",
-              date: "2024-07-05",
-              author: "David Lee",
-              image:
-                "https://via.placeholder.com/1080x720?text=Exploring+Quantum+Computing",
-            },
-            {
-              title: "The Impact of 5G Technology",
-              excerpt:
-                "How 5G technology is transforming industries and daily life.",
-              date: "2024-07-01",
-              author: "Laura Green",
-              image:
-                "https://via.placeholder.com/1080x720?text=The+Impact+of+5G+Technology",
-            },
-            {
-              title: "AI in Healthcare",
-              excerpt:
-                "The role of artificial intelligence in advancing healthcare solutions.",
-              date: "2024-06-28",
-              author: "Nancy Adams",
-              image:
-                "https://via.placeholder.com/1080x720?text=AI+in+Healthcare",
-            },
-            {
-              title: "Virtual Reality Innovations",
-              excerpt:
-                "Exploring the latest innovations in virtual reality technology.",
-              date: "2024-06-25",
-              author: "Michael Clark",
-              image:
-                "https://via.placeholder.com/1080x720?text=Virtual+Reality+Innovations",
-            },
-            {
-              title: "The Evolution of E-commerce",
-              excerpt:
-                "How e-commerce has evolved over the years and its future.",
-              date: "2024-06-20",
-              author: "Olivia Taylor",
-              image:
-                "https://via.placeholder.com/1080x720?text=The+Evolution+of+E-commerce",
-            },
-            {
-              title: "Digital Transformation Trends",
-              excerpt:
-                "The key trends driving digital transformation across industries.",
-              date: "2024-06-15",
-              author: "Sophia Martin",
-              image:
-                "https://via.placeholder.com/1080x720?text=Digital+Transformation+Trends",
-            },
-            {
-              title: "Blockchain Technology Explained",
-              excerpt:
-                "Understanding blockchain technology and its applications.",
               date: "2024-06-10",
-              author: "James Wilson",
-              image:
-                "https://via.placeholder.com/1080x720?text=Blockchain+Technology+Explained",
+              doctorName: "Dr. Brown",
+              visitSummary: "General check-up, all vitals normal.",
+            },
+            {
+              date: "2024-05-22",
+              doctorName: "Dr. White",
+              visitSummary: "Follow-up on blood test results.",
+            },
+          ],
+        },
+        {
+          type: "AppointmentScheduler",
+          availableSlots: [
+            {
+              date: "2024-08-10",
+              time: "09:00",
+              doctorName: "Dr. Brown",
+              specialization: "Cardiology",
+            },
+            {
+              date: "2024-08-12",
+              time: "14:00",
+              doctorName: "Dr. Green",
+              specialization: "Dermatology",
+            },
+          ],
+          patientId: "12345",
+          scheduledAppointments: [
+            {
+              date: "2024-08-15",
+              time: "10:00",
+              doctorName: "Dr. Smith",
+              purpose: "Annual Check-up",
+              status: "scheduled",
+            },
+            {
+              date: "2024-08-20",
+              time: "11:00",
+              doctorName: "Dr. Lee",
+              purpose: "Follow-up",
+              status: "scheduled",
             },
           ],
         },
       ],
     },
-    product: {
+    patientFollowUp: {
       sections: [
         {
           type: "HeroSection",
-          title: "Discover Our Product",
-          subtitle: "Revolutionizing the way you work",
-          ctaText: "See Features",
-          image: "https://images.unsplash.com/photo-1485217988980-11786ced9454",
+          title: "Patient Follow-Up",
+          subtitle: "Stay on top of your health",
+          ctaText: "Schedule Follow-Up",
+          image: "/images/follow-up-hero.jpg",
+        },
+        {
+          type: "PatientDashboard",
+          patientName: "Jane Doe",
+          upcomingAppointments: [
+            {
+              date: "2024-08-18",
+              doctorName: "Dr. White",
+              purpose: "Consultation",
+            },
+          ],
+          recentTestResults: [
+            { date: "2024-07-30", testName: "MRI", result: "Pending" },
+          ],
+          medications: [
+            { name: "Ibuprofen", dosage: "200mg", frequency: "As needed" },
+          ],
+          recentVisits: [
+            {
+              date: "2024-06-05",
+              doctorName: "Dr. Black",
+              visitSummary: "Initial consultation and medical history review.",
+            },
+          ],
+        },
+        {
+          type: "MedicalRecordViewer",
+          patientId: "12345",
+          records: [
+            {
+              date: "2024-06-15",
+              type: "Consultation",
+              details: "Initial consultation with Dr. Black",
+              doctorName: "Dr. Black",
+            },
+            {
+              date: "2024-07-01",
+              type: "Lab Results",
+              details: "Blood sugar levels checked",
+              doctorName: "Dr. White",
+            },
+          ],
+        },
+      ],
+    },
+    doctorCollaboration: {
+      sections: [
+        {
+          type: "HeroSection",
+          title: "Doctor Collaboration",
+          subtitle: "Work together for better patient outcomes",
+          ctaText: "Start Collaborating",
+          image: "/images/collaboration-hero.jpg",
+        },
+        {
+          type: "DoctorCollaborationBoard",
+          cases: [
+            {
+              id: "case1",
+              patientName: "Alice Johnson",
+              condition: "Diabetes",
+              status: "Open",
+              notes: [
+                "Initial diagnosis by Dr. Green",
+                "Reviewed by Dr. Brown",
+              ],
+              lastUpdated: "2024-07-25",
+            },
+            {
+              id: "case2",
+              patientName: "Bob Brown",
+              condition: "Hypertension",
+              status: "In-Progress",
+              notes: [
+                "Medication adjusted by Dr. White",
+                "Follow-up scheduled",
+              ],
+              lastUpdated: "2024-07-20",
+            },
+          ],
         },
         {
           type: "FeatureSection",
-          title: "Key Feature 1",
-          description: "Description of our amazing key feature",
-          image: "https://images.unsplash.com/photo-1506765515384-028b60a970df",
-          ctaText: "Learn More",
+          title: "Features for Doctors",
+          description:
+            "Collaborate on patient cases, share insights, and improve care.",
+          image: collaborationImage,
+          ctaText: "Explore Features",
           imagePosition: "left",
         },
+      ],
+    },
+    patientPortal: {
+      sections: [
         {
-          type: "FeatureSection",
-          title: "Key Feature 2",
-          description: "Another groundbreaking feature explained",
-          image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-          ctaText: "See Details",
-          imagePosition: "right",
+          type: "HeroSection",
+          title: "Patient Portal",
+          subtitle: "Your health, your control",
+          ctaText: "Access Portal",
+          image: "/images/portal-hero.jpg",
         },
         {
-          type: "CallToAction",
-          title: "Ready to transform your workflow?",
-          ctaText: "Get Started Now",
+          type: "PatientDashboard",
+          patientName: "Emily Carter",
+          upcomingAppointments: [
+            {
+              date: "2024-08-22",
+              doctorName: "Dr. Wilson",
+              purpose: "Routine Check-up",
+            },
+          ],
+          recentTestResults: [
+            { date: "2024-07-28", testName: "ECG", result: "Normal" },
+          ],
+          medications: [
+            { name: "Lisinopril", dosage: "10mg", frequency: "Daily" },
+          ],
+          recentVisits: [
+            {
+              date: "2024-07-12",
+              doctorName: "Dr. Adams",
+              visitSummary: "Follow-up on medication effectiveness.",
+            },
+          ],
+        },
+        {
+          type: "AppointmentScheduler",
+          availableSlots: [
+            {
+              date: "2024-08-15",
+              time: "10:00",
+              doctorName: "Dr. Adams",
+              specialization: "Cardiology",
+            },
+          ],
+          patientId: "67890",
+          scheduledAppointments: [
+            {
+              date: "2024-08-22",
+              time: "10:00",
+              doctorName: "Dr. Wilson",
+              purpose: "Routine Check-up",
+              status: "scheduled",
+            },
+          ],
+        },
+        {
+          type: "MedicalRecordViewer",
+          patientId: "67890",
+          records: [
+            {
+              date: "2024-07-10",
+              type: "Consultation",
+              details: "Consulted with Dr. Roberts",
+              doctorName: "Dr. Roberts",
+            },
+          ],
         },
       ],
     },
@@ -305,64 +278,59 @@ export const appData: AppData = {
       hero: {
         type: "HeroSection",
         title: "About Us",
-        subtitle: "Learn more about our company",
-        ctaText: "Get in touch",
-        image: "https://images.unsplash.com/photo-1501426026826-31c667bdf23d",
+        subtitle: "Learn more about our mission and team",
+        ctaText: "Contact Us",
+        image: "/images/about-hero.jpg",
       },
       mission: {
         title: "Our Mission",
-        description: "We aim to provide the best services to our customers.",
+        description:
+          "To provide seamless healthcare solutions that connect patients and providers efficiently.",
       },
       team: [
         {
-          name: "John Doe",
-          role: "CEO",
-          image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          name: "Dr. Samantha Green",
+          role: "Chief Medical Officer",
+          image: "/images/team-samantha.jpg",
         },
-        {
-          name: "Jane Smith",
-          role: "CTO",
-          image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde",
-        },
-        {
-          name: "Emily Johnson",
-          role: "CFO",
-          image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-        },
+        { name: "Alex Johnson", role: "CTO", image: "/images/team-alex.jpg" },
       ],
       callToAction: {
         type: "CallToAction",
-        title: "Join our team",
-        ctaText: "Careers",
+        title: "Join Our Team",
+        ctaText: "Apply Now",
       },
+    },
+    contact: {
+      address: "123 Health St, MedCity, TX 75001",
+      phone: "+1 (555) 123-4567",
+      email: "info@care-connect.com",
+      sections: [
+        {
+          type: "ContactInfo",
+          address: "123 Health St, MedCity, TX 75001",
+          phone: "+1 (555) 123-4567",
+          email: "info@care-connect.com",
+        },
+        {
+          type: "CallToAction",
+          title: "Get in Touch",
+          ctaText: "Send Us a Message",
+        },
+      ],
     },
   },
   footer: {
-    companyInfo: "2024 © React Business Starter. All rights reserved.",
+    companyInfo: "Care-Connect | Providing Seamless Healthcare Solutions",
     companyLinks: [
-      { name: "Home", href: "/" },
-      { name: "Product", href: "/product" },
-      { name: "About us", href: "/about" },
-      { name: "Pricing", href: "/pricing" },
-      { name: "Blog", href: "/blog" },
-      { name: "Contact", href: "/contact" },
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms of Service", href: "/terms" },
     ],
     socialLinks: [
-      { name: "Facebook", href: "https://www.facebook.com" },
-      { name: "Twitter", href: "https://www.twitter.com" },
-      { name: "LinkedIn", href: "https://www.linkedin.com" },
-      { name: "Instagram", href: "https://www.instagram.com" },
+      { name: "Facebook", href: "https://facebook.com/careconnect" },
+      { name: "Twitter", href: "https://twitter.com/careconnect" },
     ],
-    integrationsLinks: [
-      { name: "Slack", href: "https://slack.com" },
-      { name: "Asana", href: "https://asana.com" },
-      { name: "Jira", href: "https://jira.com" },
-      { name: "Trello", href: "https://trello.com" },
-    ],
-    legalLinks: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms Of Service", href: "/terms" },
-    ],
+    legalLinks: [{ name: "Legal Notices", href: "/legal" }],
   },
   theme: {
     "background-color": "#f0f0f0",
@@ -391,3 +359,5 @@ export const appData: AppData = {
     "hero-text-color": "#ffffff",
   },
 };
+
+export default appData;

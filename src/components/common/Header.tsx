@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Header.css";
-import { appData } from "../../data/appData";
+import appData from "../../data/appData";
 
 interface HeaderProps {
   onThemeChange: (theme: string) => void;
