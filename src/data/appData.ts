@@ -3,14 +3,12 @@
 import { AppData } from "../types/interfaces";
 const heroImage = require("../assets/care_connect_hero_image.jpeg");
 const keyFeaturesImage = require("../assets/care_connect_key_features_image.jpeg");
-
-// Sample app data with updated sections and new types
+const collaborationImage = require("../assets/doctor_collaboration_image.jpg");
 
 const appData: AppData = {
   companyName: "Care-Connect",
   navigation: [
     { name: "Home", href: "/home" },
-    { name: "Patient Follow-Up", href: "/patient-follow-up" },
     { name: "Doctor Collaboration", href: "/doctor-collaboration" },
     { name: "Patient Portal", href: "/patient-portal" },
     { name: "About Us", href: "/about" },
@@ -55,12 +53,55 @@ const appData: AppData = {
             { date: "2024-08-01", testName: "Blood Test", result: "Normal" },
             { date: "2024-07-25", testName: "X-Ray", result: "Clear" },
           ],
+          medications: [
+            { name: "Aspirin", dosage: "75mg", frequency: "Daily" },
+            { name: "Metformin", dosage: "500mg", frequency: "Twice a day" },
+          ],
+          recentVisits: [
+            {
+              date: "2024-06-10",
+              doctorName: "Dr. Brown",
+              visitSummary: "General check-up, all vitals normal.",
+            },
+            {
+              date: "2024-05-22",
+              doctorName: "Dr. White",
+              visitSummary: "Follow-up on blood test results.",
+            },
+          ],
         },
         {
           type: "AppointmentScheduler",
           availableSlots: [
-            { date: "2024-08-10", time: "09:00", doctorName: "Dr. Brown" },
-            { date: "2024-08-12", time: "14:00", doctorName: "Dr. Green" },
+            {
+              date: "2024-08-10",
+              time: "09:00",
+              doctorName: "Dr. Brown",
+              specialization: "Cardiology",
+            },
+            {
+              date: "2024-08-12",
+              time: "14:00",
+              doctorName: "Dr. Green",
+              specialization: "Dermatology",
+            },
+          ],
+          patientId: "12345",
+          scheduledAppointments: [
+            {
+              date: "2024-08-15",
+              time: "10:00",
+              doctorName: "Dr. Smith",
+              purpose: "Annual Check-up",
+              status: "scheduled",
+            },
+            {
+              date: "2024-08-20",
+              time: "11:00",
+              doctorName: "Dr. Lee",
+              purpose: "Follow-up",
+              status: "scheduled",
+            },
           ],
         },
       ],
@@ -87,6 +128,16 @@ const appData: AppData = {
           recentTestResults: [
             { date: "2024-07-30", testName: "MRI", result: "Pending" },
           ],
+          medications: [
+            { name: "Ibuprofen", dosage: "200mg", frequency: "As needed" },
+          ],
+          recentVisits: [
+            {
+              date: "2024-06-05",
+              doctorName: "Dr. Black",
+              visitSummary: "Initial consultation and medical history review.",
+            },
+          ],
         },
         {
           type: "MedicalRecordViewer",
@@ -96,11 +147,13 @@ const appData: AppData = {
               date: "2024-06-15",
               type: "Consultation",
               details: "Initial consultation with Dr. Black",
+              doctorName: "Dr. Black",
             },
             {
               date: "2024-07-01",
               type: "Lab Results",
               details: "Blood sugar levels checked",
+              doctorName: "Dr. White",
             },
           ],
         },
@@ -123,12 +176,22 @@ const appData: AppData = {
               patientName: "Alice Johnson",
               condition: "Diabetes",
               status: "Open",
+              notes: [
+                "Initial diagnosis by Dr. Green",
+                "Reviewed by Dr. Brown",
+              ],
+              lastUpdated: "2024-07-25",
             },
             {
               id: "case2",
               patientName: "Bob Brown",
               condition: "Hypertension",
               status: "In-Progress",
+              notes: [
+                "Medication adjusted by Dr. White",
+                "Follow-up scheduled",
+              ],
+              lastUpdated: "2024-07-20",
             },
           ],
         },
@@ -137,7 +200,7 @@ const appData: AppData = {
           title: "Features for Doctors",
           description:
             "Collaborate on patient cases, share insights, and improve care.",
-          image: "/images/doctor-features.jpg",
+          image: collaborationImage,
           ctaText: "Explore Features",
           imagePosition: "left",
         },
@@ -165,11 +228,36 @@ const appData: AppData = {
           recentTestResults: [
             { date: "2024-07-28", testName: "ECG", result: "Normal" },
           ],
+          medications: [
+            { name: "Lisinopril", dosage: "10mg", frequency: "Daily" },
+          ],
+          recentVisits: [
+            {
+              date: "2024-07-12",
+              doctorName: "Dr. Adams",
+              visitSummary: "Follow-up on medication effectiveness.",
+            },
+          ],
         },
         {
           type: "AppointmentScheduler",
           availableSlots: [
-            { date: "2024-08-15", time: "10:00", doctorName: "Dr. Adams" },
+            {
+              date: "2024-08-15",
+              time: "10:00",
+              doctorName: "Dr. Adams",
+              specialization: "Cardiology",
+            },
+          ],
+          patientId: "67890",
+          scheduledAppointments: [
+            {
+              date: "2024-08-22",
+              time: "10:00",
+              doctorName: "Dr. Wilson",
+              purpose: "Routine Check-up",
+              status: "scheduled",
+            },
           ],
         },
         {
@@ -180,6 +268,7 @@ const appData: AppData = {
               date: "2024-07-10",
               type: "Consultation",
               details: "Consulted with Dr. Roberts",
+              doctorName: "Dr. Roberts",
             },
           ],
         },
@@ -244,28 +333,28 @@ const appData: AppData = {
     legalLinks: [{ name: "Legal Notices", href: "/legal" }],
   },
   theme: {
-    "background-color": "#f5f5f5",
+    "background-color": "#f0f0f0",
     "body-background-color": "#ffffff",
     "text-color": "#333333",
     "cta-background-color": "#007bff",
     "cta-text-color": "#ffffff",
-    "cta-button-background-color": "#007bff",
-    "cta-button-text-color": "#ffffff",
-    "cta-button-hover-background-color": "#0056b3",
+    "cta-button-background-color": "#ffffff",
+    "cta-button-text-color": "#007bff",
+    "cta-button-hover-background-color": "#f8f9fa",
     "contact-form-background-color": "#ffffff",
-    "submit-button-background-color": "#28a745",
+    "submit-button-background-color": "#007bff",
     "submit-button-text-color": "#ffffff",
-    "submit-button-hover-background-color": "#218838",
+    "submit-button-hover-background-color": "#0056b3",
     "feature-heading-color": "#333333",
     "feature-text-color": "#666666",
-    "footer-background-color": "#222222",
-    "footer-text-color": "#ffffff",
-    "footer-link-color": "#007bff",
-    "footer-icon-color": "#ffffff",
-    "header-background-color": "#007bff",
+    "footer-background-color": "#f8f8f8",
+    "footer-text-color": "#333333",
+    "footer-link-color": "#555555",
+    "footer-icon-color": "#333333",
+    "header-background-color": "#333333",
     "header-text-color": "#ffffff",
     "header-link-color": "#ffffff",
-    "header-link-hover-color": "#f5f5f5",
+    "header-link-hover-color": "#dddddd",
     "hero-background-color": "#007bff",
     "hero-text-color": "#ffffff",
   },

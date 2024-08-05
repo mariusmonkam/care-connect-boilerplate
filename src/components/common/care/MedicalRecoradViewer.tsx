@@ -1,14 +1,22 @@
-// In src/components/common/MedicalRecordViewer.tsx
-
 import React from "react";
 import { MedicalRecordViewerData } from "../../../types/interfaces";
 
-const MedicalRecordViewer: React.FC<MedicalRecordViewerData> = (props) => {
+const MedicalRecordViewer: React.FC<MedicalRecordViewerData> = ({
+  records,
+}) => {
   return (
     <div className="medical-record-viewer">
-      <h2>Medical Record Viewer</h2>
-      {/* Example content: Replace with actual rendering logic */}
-      <p>View medical records for {props?.patientId}!</p>
+      <h2>Medical Records</h2>
+      <ul>
+        {records.map((record, index) => (
+          <li key={index}>
+            <strong>Date:</strong> {record.date} <br />
+            <strong>Type:</strong> {record.type} <br />
+            <strong>Details:</strong> {record.details} <br />
+            <strong>Doctor:</strong> {record.doctorName}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

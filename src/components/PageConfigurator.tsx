@@ -13,9 +13,7 @@ import FeatureComparison from "./common/FeatureComparison";
 import FAQ from "./common/FAQ";
 import ContactForm from "./common/ContactForm";
 import ContactInfo from "./common/ContactInfo";
-import BlogPost from "./common/BlogPost";
 import MissionSection from "./common/MissionSection";
-import TeamSection from "./common/TeamSection";
 
 // Import medical-specific components
 import PatientDashboard from "./common/care/PatientDashboard";
@@ -35,8 +33,6 @@ import {
   PricingTiersData,
   FeatureComparisonData,
   FAQData,
-  ContactInfoData,
-  BlogPostData,
   PatientDashboardData,
   DoctorCollaborationBoardData,
   MedicalRecordViewerData,
@@ -117,6 +113,7 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
             case "FAQ":
               return <FAQ key={index} {...(section as FAQData)} />;
 
+            // Medical-specific components
             case "PatientDashboard":
               return (
                 <PatientDashboard
@@ -145,6 +142,7 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
                   {...(section as AppointmentSchedulerData)}
                 />
               );
+
             default:
               return null;
           }

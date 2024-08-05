@@ -12,7 +12,6 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
-import PatientFollowUpPage from "./pages/PatientFollowUpPage";
 import PatientPortalPage from "./pages/PatientPortalPage";
 import DoctorCollaborationPage from "./pages/DoctorCollaborationPage";
 
@@ -41,7 +40,6 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/patient-follow-up" element={<PatientFollowUpPage />} />
           <Route path="/patient-portal" element={<PatientPortalPage />} />
           <Route
             path="/doctor-collaboration"

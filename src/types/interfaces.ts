@@ -117,6 +117,16 @@ export interface PatientDashboardData extends BaseSectionData {
     testName: string;
     result: string;
   }>;
+  medications: Array<{
+    name: string;
+    dosage: string;
+    frequency: string;
+  }>;
+  recentVisits: Array<{
+    date: string;
+    doctorName: string;
+    visitSummary: string;
+  }>;
 }
 
 export interface DoctorCollaborationBoardData extends BaseSectionData {
@@ -126,6 +136,8 @@ export interface DoctorCollaborationBoardData extends BaseSectionData {
     patientName: string;
     condition: string;
     status: string;
+    notes: string[];
+    lastUpdated: string;
   }>;
 }
 
@@ -136,6 +148,7 @@ export interface MedicalRecordViewerData extends BaseSectionData {
     date: string;
     type: string;
     details: string;
+    doctorName: string;
   }>;
 }
 
@@ -145,6 +158,15 @@ export interface AppointmentSchedulerData extends BaseSectionData {
     date: string;
     time: string;
     doctorName: string;
+    specialization?: string;
+  }>;
+  patientId: string;
+  scheduledAppointments: Array<{
+    date: string;
+    time: string;
+    doctorName: string;
+    purpose: string;
+    status: "scheduled" | "completed" | "cancelled";
   }>;
 }
 
@@ -343,4 +365,19 @@ export interface CollaborationCase {
   condition: string;
   status: "open" | "in-progress" | "resolved";
   notes: string[];
+}
+
+// In src/types/interfaces.ts
+
+export interface CaseData {
+  id: string;
+  patientName: string;
+  condition: string;
+  status: string;
+  notes: string[];
+  lastUpdated: string;
+}
+
+export interface DoctorCollaborationBoardData {
+  cases: CaseData[];
 }
