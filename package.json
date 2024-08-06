@@ -1,7 +1,7 @@
 {
-  "name": "react-business-starter",
+  "name": "care-connect-boilerplate",
   "version": "1.0.0",
-  "description": "React Business Starter is a perfect React boilerplate for businesses, startups, and websites for products and services. It’s designed to get you up and running quickly and efficiently on your next React project!",
+  "description": "Care-Connect Boilerplate is a React-based starter kit for developing modern healthcare applications.",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
     "@testing-library/jest-dom": "^5.17.0",
@@ -29,27 +29,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mariusmonkam/react-business-starter.git"
+    "url": "git+https://github.com/mariusmonkam/care-connect-boilerplate.git"
   },
   "keywords": [
-    "React Business Starter",
+    "Health Tech",
+    "Healthcare Solutions",
+    "Patient Portal",
+    "Telemedicine",
+    "Medical Records Management",
     "React",
-    "StartupTech",
-    "BusinessTech",
-    "Modular Components",
-    "Dynamic Page Configurator",
-    "Responsive Design",
     "TypeScript",
+    "Modular Components",
+    "Responsive Design",
     "Data-Driven",
     "Redux-Toolkit",
     "Routing",
-    "Boilerplate",
-    "Starter Project",
-    "Business",
-    "Startup",
-    "Website",
-    "Products",
-    "Services"
+    "Healthcare Platform",
+    "Clinical Dashboard",
+    "Medical App Development",
+    "Digital Health",
+    "Health IT",
+    "EHR Integration",
+    "Startup Kit",
+    "Business Solutions",
+    "Tech Integration"
   ],
   "eslintConfig": {
     "extends": [
@@ -75,6 +78,6 @@
   "author": "Marius Monkam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mariusmonkam/react-business-starter/issues"
+    "url": "https://github.com/mariusmonkam/care-connect-boilerplate/issues"
   }
 }
