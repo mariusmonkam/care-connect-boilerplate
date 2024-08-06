@@ -1,5 +1,3 @@
-// In src/components/common/DoctorCollaborationBoard.tsx
-
 import React from "react";
 import {
   DoctorCollaborationBoardData,

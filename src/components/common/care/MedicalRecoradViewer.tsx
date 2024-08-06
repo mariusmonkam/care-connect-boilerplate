@@ -1,5 +1,6 @@
 import React from "react";
 import { MedicalRecordViewerData } from "../../../types/interfaces";
+import "../../../styles/care/PatientPortalPage.css";
 
 const MedicalRecordViewer: React.FC<MedicalRecordViewerData> = ({
   records,

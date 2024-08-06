@@ -1,5 +1,6 @@
 import React from "react";
 import { PatientDashboardData } from "../../../types/interfaces";
+import "../../../styles/care/PatientPortalPage.css";
 
 const PatientDashboard: React.FC<PatientDashboardData> = ({
   patientName,

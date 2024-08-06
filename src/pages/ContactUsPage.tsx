@@ -1,6 +1,5 @@
-// src/pages/AboutUsPage.tsx
-
 import React from "react";
+import "../styles/global.css";
 import PageConfigurator from "../components/PageConfigurator";
 import appData from "../data/appData";
 

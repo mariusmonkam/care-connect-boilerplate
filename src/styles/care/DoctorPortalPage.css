@@ -1,15 +1,14 @@
-/* In src/styles/care/DoctorCollaborationPage.css */
-
+/* Doctor Collaboration Board Styles */
 .doctor-collaboration-board {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--body-background-color);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .doctor-collaboration-board h2 {
   margin-bottom: 20px;
-  color: #333;
+  color: var(--header-text-color);
   text-align: center;
 }
 
@@ -21,7 +20,7 @@
 }
 
 .case-card {
-  background: #fff;
+  background: var(--contact-form-background-color);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -44,14 +43,14 @@
 .case-header h3 {
   margin: 0;
   font-size: 18px;
-  color: #007bff;
+  color: var(--cta-background-color);
 }
 
 .status {
   padding: 5px 10px;
   border-radius: 12px;
   font-size: 12px;
-  color: #fff;
+  color: var(--cta-text-color);
 }
 
 .status.open {
@@ -69,13 +68,13 @@
 .case-body p {
   margin: 5px 0;
   font-size: 14px;
-  color: #555;
+  color: var(--text-color);
 }
 
 .case-notes h4 {
   margin-top: 15px;
   font-size: 16px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .case-notes ul {
@@ -85,7 +84,7 @@
 .case-notes li {
   margin-bottom: 5px;
   font-size: 14px;
-  color: #555;
+  color: var(--text-color);
 }
 
 /* Responsive Styles */

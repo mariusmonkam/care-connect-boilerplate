@@ -1,15 +1,18 @@
 // src/data/appData.ts
 
 import { AppData } from "../types/interfaces";
+
+// Images imported using require
 const heroImage = require("../assets/care_connect_hero_image.jpeg");
 const keyFeaturesImage = require("../assets/care_connect_key_features_image.jpeg");
 const collaborationImage = require("../assets/doctor_collaboration_image.jpg");
 
+// Define the app data
 const appData: AppData = {
   companyName: "Care-Connect",
   navigation: [
     { name: "Home", href: "/home" },
-    { name: "Doctor Collaboration", href: "/doctor-collaboration" },
+    { name: "Doctor Portal", href: "/doctor-portal" },
     { name: "Patient Portal", href: "/patient-portal" },
     { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
@@ -35,8 +38,8 @@ const appData: AppData = {
         },
         {
           type: "CallToAction",
-          title: "Ready to Make a Difference?",
-          ctaText: "Join Us",
+          title: "Connect with Experts for Your Health Needs",
+          ctaText: "Schedule a Consultation",
         },
         {
           type: "PatientDashboard",
@@ -104,6 +107,11 @@ const appData: AppData = {
             },
           ],
         },
+        {
+          type: "CallToAction", // Added CallToAction here
+          title: "Take Control of Your Health Today",
+          ctaText: "Manage Your Health",
+        },
       ],
     },
     patientFollowUp: {
@@ -113,7 +121,7 @@ const appData: AppData = {
           title: "Patient Follow-Up",
           subtitle: "Stay on top of your health",
           ctaText: "Schedule Follow-Up",
-          image: "/images/follow-up-hero.jpg",
+          image: "/images/patient-follow-up.jpg",
         },
         {
           type: "PatientDashboard",
@@ -159,62 +167,8 @@ const appData: AppData = {
         },
       ],
     },
-    doctorCollaboration: {
-      sections: [
-        {
-          type: "HeroSection",
-          title: "Doctor Collaboration",
-          subtitle: "Work together for better patient outcomes",
-          ctaText: "Start Collaborating",
-          image: "/images/collaboration-hero.jpg",
-        },
-        {
-          type: "DoctorCollaborationBoard",
-          cases: [
-            {
-              id: "case1",
-              patientName: "Alice Johnson",
-              condition: "Diabetes",
-              status: "Open",
-              notes: [
-                "Initial diagnosis by Dr. Green",
-                "Reviewed by Dr. Brown",
-              ],
-              lastUpdated: "2024-07-25",
-            },
-            {
-              id: "case2",
-              patientName: "Bob Brown",
-              condition: "Hypertension",
-              status: "In-Progress",
-              notes: [
-                "Medication adjusted by Dr. White",
-                "Follow-up scheduled",
-              ],
-              lastUpdated: "2024-07-20",
-            },
-          ],
-        },
-        {
-          type: "FeatureSection",
-          title: "Features for Doctors",
-          description:
-            "Collaborate on patient cases, share insights, and improve care.",
-          image: collaborationImage,
-          ctaText: "Explore Features",
-          imagePosition: "left",
-        },
-      ],
-    },
     patientPortal: {
       sections: [
-        {
-          type: "HeroSection",
-          title: "Patient Portal",
-          subtitle: "Your health, your control",
-          ctaText: "Access Portal",
-          image: "/images/portal-hero.jpg",
-        },
         {
           type: "PatientDashboard",
           patientName: "Emily Carter",
@@ -272,6 +226,11 @@ const appData: AppData = {
             },
           ],
         },
+        {
+          type: "CallToAction", // Added CallToAction here
+          title: "Stay on Top of Your Health",
+          ctaText: "Get Started Now",
+        },
       ],
     },
     about: {
@@ -280,7 +239,7 @@ const appData: AppData = {
         title: "About Us",
         subtitle: "Learn more about our mission and team",
         ctaText: "Contact Us",
-        image: "/images/about-hero.jpg",
+        image: "/images/about-us.jpg",
       },
       mission: {
         title: "Our Mission",
@@ -319,6 +278,94 @@ const appData: AppData = {
         },
       ],
     },
+    doctorPortal: {
+      sections: [
+        {
+          type: "HeroSection",
+          title: "Doctor Portal",
+          subtitle: "Manage Your Patients and Schedule",
+          ctaText: "Get Started",
+          image: collaborationImage,
+        },
+        {
+          type: "DoctorCollaborationBoard",
+          cases: [
+            {
+              id: "001",
+              patientName: "Alice Johnson",
+              condition: "Diabetes",
+              status: "Pending",
+              notes: [
+                "Patient requires follow-up consultation.",
+                "Monitor blood sugar levels closely.",
+              ],
+              lastUpdated: "2024-07-15",
+            },
+            {
+              id: "002",
+              patientName: "Bob Brown",
+              condition: "Hypertension",
+              status: "Resolved",
+              notes: [
+                "Case resolved successfully with medication.",
+                "No further action required at this time.",
+              ],
+              lastUpdated: "2024-06-20",
+            },
+            {
+              id: "003",
+              patientName: "Charlie Davis",
+              condition: "Asthma",
+              status: "In-Progress",
+              notes: [
+                "Patient needs to adjust medication dosage.",
+                "Next review scheduled for August.",
+              ],
+              lastUpdated: "2024-08-01",
+            },
+          ],
+        },
+        {
+          type: "CallToAction",
+          title: "Enhance Your Collaboration with Peers",
+          ctaText: "Join the Network",
+        },
+        {
+          type: "AppointmentScheduler",
+          availableSlots: [
+            {
+              date: "2024-08-10",
+              time: "08:00",
+              doctorName: "Alice Johnson",
+              specialization: "Internal Medicine",
+            },
+            {
+              date: "2024-08-12",
+              time: "13:00",
+              doctorName: "Bob Brown",
+              specialization: "Pediatrics",
+            },
+          ],
+          patientId: "54321",
+          scheduledAppointments: [
+            {
+              date: "2024-08-10",
+              time: "08:00",
+              doctorName: "Alice Johnson",
+              purpose: "Routine Check-up",
+              status: "scheduled",
+            },
+            {
+              date: "2024-08-12",
+              time: "13:00",
+              doctorName: "Bob Brown",
+              purpose: "Follow-up",
+              status: "scheduled",
+            },
+          ],
+        },
+      ],
+    },
   },
   footer: {
     companyInfo: "Care-Connect | Providing Seamless Healthcare Solutions",
@@ -333,30 +380,35 @@ const appData: AppData = {
     legalLinks: [{ name: "Legal Notices", href: "/legal" }],
   },
   theme: {
-    "background-color": "#f0f0f0",
-    "body-background-color": "#ffffff",
-    "text-color": "#333333",
-    "cta-background-color": "#007bff",
-    "cta-text-color": "#ffffff",
-    "cta-button-background-color": "#ffffff",
-    "cta-button-text-color": "#007bff",
-    "cta-button-hover-background-color": "#f8f9fa",
-    "contact-form-background-color": "#ffffff",
-    "submit-button-background-color": "#007bff",
-    "submit-button-text-color": "#ffffff",
-    "submit-button-hover-background-color": "#0056b3",
-    "feature-heading-color": "#333333",
-    "feature-text-color": "#666666",
-    "footer-background-color": "#f8f8f8",
-    "footer-text-color": "#333333",
-    "footer-link-color": "#555555",
-    "footer-icon-color": "#333333",
-    "header-background-color": "#333333",
-    "header-text-color": "#ffffff",
-    "header-link-color": "#ffffff",
-    "header-link-hover-color": "#dddddd",
-    "hero-background-color": "#007bff",
-    "hero-text-color": "#ffffff",
+    "background-color": "#f0f0f0" /* General background color */,
+    "body-background-color": "#ffffff" /* Body background color */,
+
+    "text-color": "#333333" /* Primary text color */,
+    "header-text-color": "#222222" /* Header text color for better contrast */,
+    "cta-background-color": "#007bff" /* Call-to-action background color */,
+    "cta-text-color": "#ffffff" /* Call-to-action text color */,
+    "cta-button-background-color": "#ffffff" /* CTA button background color */,
+    "cta-button-text-color": "#007bff" /* CTA button text color */,
+    "cta-button-hover-background-color":
+      "#f8f9fa" /* CTA button hover background */,
+    "contact-form-background-color":
+      "#ffffff" /* Background for contact forms */,
+    "submit-button-background-color":
+      "#007bff" /* Submit button background color */,
+    "submit-button-text-color": "#ffffff" /* Submit button text color */,
+    "submit-button-hover-background-color":
+      "#0056b3" /* Submit button hover background */,
+    "feature-heading-color": "#333333" /* Feature section headings color */,
+    "feature-text-color": "#666666" /* Feature section text color */,
+    "footer-background-color": "#f8f8f8" /* Footer background color */,
+    "footer-text-color": "#333333" /* Footer text color */,
+    "footer-link-color": "#555555" /* Footer link color */,
+    "footer-icon-color": "#333333" /* Footer icon color */,
+    "header-background-color": "#333333" /* Header background color */,
+    "header-link-color": "#ffffff" /* Header link color */,
+    "header-link-hover-color": "#dddddd" /* Header link hover color */,
+    "hero-background-color": "#007bff" /* Hero section background color */,
+    "hero-text-color": "#ffffff" /* Hero section text color */,
   },
 };
 

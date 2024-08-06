@@ -1,24 +1,10 @@
-/* Reset to Original Theme */
-:root {
-  --body-background-color: #f4f4f4;
-  --text-color: #333;
-  --header-text-color: #007bff;
-  --contact-form-background-color: #ffffff;
-  --cta-text-color: #ffffff;
-}
+/* src/styles/PatientPortalPage.css */
 
 /* General Styles */
 .patient-dashboard {
   padding: 20px;
   background-color: var(--body-background-color);
   color: var(--text-color);
-}
-
-.patient-dashboard h2 {
-  color: var(--header-text-color);
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
 }
 
 /* Dashboard Layout */
@@ -35,12 +21,6 @@
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.section h3 {
-  color: var(--header-text-color);
-  font-size: 20px;
-  margin-bottom: 10px;
 }
 
 /* Remove list dots */
@@ -97,23 +77,11 @@
   color: var(--text-color);
 }
 
-.medical-record-viewer h2 {
-  color: var(--header-text-color);
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
 /* Appointment Scheduler Styles */
 .appointment-scheduler {
   padding: 20px;
   background-color: var(--body-background-color);
   color: var(--text-color);
-}
-
-.appointment-scheduler h2 {
-  color: var(--header-text-color);
-  font-size: 24px;
-  margin-bottom: 20px;
 }
 
 .slots {

@@ -23,6 +23,7 @@ import {
   HomePageData,
   ContactPageData,
   AboutPageData,
+  DoctorPortalPageData, // Import DoctorPortalPageData
   HeroSectionData,
   TrustedBySectionData,
   FeatureSectionData,
@@ -42,8 +43,17 @@ import "../styles/PageConfigurator.css";
 import MedicalRecordViewer from "./common/care/MedicalRecoradViewer";
 import AppointmentScheduler from "./common/care/AppointmentSheduler";
 
+// Type guard to check if `pageData` has a `sections` property
+function hasSections(data: any): data is { sections: any[] } {
+  return "sections" in data;
+}
+
 interface PageConfiguratorProps {
-  pageData: HomePageData | ContactPageData | AboutPageData;
+  pageData:
+    | HomePageData
+    | ContactPageData
+    | AboutPageData
+    | DoctorPortalPageData; // Add DoctorPortalPageData type
   pageName: string;
 }
 
@@ -56,7 +66,8 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
   if (
     pageName !== "contact" &&
     pageName !== "about" &&
-    "sections" in pageData
+    pageName !== "doctorPortal" && // Add doctorPortal to the check
+    hasSections(pageData) // Use the type guard to check for sections
   ) {
     return (
       <div className={`${commonPageStyles} ${pageName}`}>
@@ -112,7 +123,6 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
               );
             case "FAQ":
               return <FAQ key={index} {...(section as FAQData)} />;
-
             // Medical-specific components
             case "PatientDashboard":
               return (
@@ -142,7 +152,6 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
                   {...(section as AppointmentSchedulerData)}
                 />
               );
-
             default:
               return null;
           }
@@ -165,6 +174,53 @@ const PageConfigurator: React.FC<PageConfiguratorProps> = ({
       <div className={commonPageStyles}>
         <MissionSection {...(pageData as AboutPageData).mission} />
         <CallToAction {...(pageData as AboutPageData).callToAction} />
+      </div>
+    );
+  }
+
+  if (pageName === "doctorPortal") {
+    // Handle doctorPortal case
+    return (
+      <div className={commonPageStyles}>
+        {hasSections(pageData) && // Use the type guard to check for sections
+          pageData.sections.map((section, index: number) => {
+            switch (section.type) {
+              case "HeroSection":
+                return (
+                  <HeroSection key={index} {...(section as HeroSectionData)} />
+                );
+              case "DoctorCollaborationBoard":
+                return (
+                  <DoctorCollaborationBoard
+                    key={index}
+                    {...(section as DoctorCollaborationBoardData)}
+                  />
+                );
+              case "MedicalRecordViewer":
+                return (
+                  <MedicalRecordViewer
+                    key={index}
+                    {...(section as MedicalRecordViewerData)}
+                  />
+                );
+              case "AppointmentScheduler":
+                return (
+                  <AppointmentScheduler
+                    key={index}
+                    {...(section as AppointmentSchedulerData)}
+                  />
+                );
+              case "CallToAction":
+                return (
+                  <CallToAction
+                    key={index}
+                    {...(section as CallToActionData)}
+                  />
+                );
+              default:
+                return null;
+            }
+          })}
       </div>
     );
   }

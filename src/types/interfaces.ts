@@ -190,11 +190,23 @@ export interface HomePageData {
   )[];
 }
 
+export interface DoctorPortalPageData {
+  sections: (
+    | HeroSectionData
+    | DoctorCollaborationBoardData
+    | FeatureSectionData
+    | MedicalRecordViewerData
+    | AppointmentSchedulerData
+    | CallToActionData
+  )[];
+}
+
 export interface PatientFollowUpPageData {
   sections: (
     | HeroSectionData
     | PatientDashboardData
     | MedicalRecordViewerData
+    | CallToActionData
   )[];
 }
 
@@ -203,6 +215,8 @@ export interface DoctorCollaborationPageData {
     | HeroSectionData
     | DoctorCollaborationBoardData
     | FeatureSectionData
+    | AppointmentSchedulerData
+    | CallToActionData
   )[];
 }
 
@@ -212,6 +226,7 @@ export interface PatientPortalPageData {
     | PatientDashboardData
     | AppointmentSchedulerData
     | MedicalRecordViewerData
+    | CallToActionData
   )[];
 }
 
@@ -290,7 +305,7 @@ export interface AppData {
   pages: {
     home: HomePageData;
     patientFollowUp: PatientFollowUpPageData;
-    doctorCollaboration: DoctorCollaborationPageData;
+    doctorPortal: DoctorPortalPageData; // New Page
     patientPortal: PatientPortalPageData;
     about: AboutPageData;
     contact: ContactPageData;
@@ -380,4 +395,5 @@ export interface CaseData {
 
 export interface DoctorCollaborationBoardData {
   cases: CaseData[];
+  boardName?: string;
 }

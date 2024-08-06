@@ -13,7 +13,7 @@ import store from "./store/store";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import PatientPortalPage from "./pages/PatientPortalPage";
-import DoctorCollaborationPage from "./pages/DoctorCollaborationPage";
+import DoctorPortalPage from "./pages/DoctorPortalPage";
 
 const App: React.FC = () => {
   // Retrieve the theme from localStorage, default to 'default'
@@ -41,10 +41,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/patient-portal" element={<PatientPortalPage />} />
-          <Route
-            path="/doctor-collaboration"
-            element={<DoctorCollaborationPage />}
-          />
+          <Route path="/doctor-portal" element={<DoctorPortalPage />} />
 
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/about" element={<AboutUsPage />} />

@@ -1,5 +1,6 @@
 import React from "react";
 import { AppointmentSchedulerData } from "../../../types/interfaces";
+import "../../../styles/care/PatientPortalPage.css";
 
 const AppointmentScheduler: React.FC<AppointmentSchedulerData> = ({
   availableSlots,

@@ -1,23 +1,29 @@
-/* src/styles/global.css */
-
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* General Body Styles */
+/* General Styles */
 body {
-  font-family: var(--font-family, Arial, sans-serif);
-  background-color: var(--body-background-color, #f9f9f9);
-  color: var(--text-color, #333);
+  font-family: Arial, sans-serif;
+  background-color: var(--body-background-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
-/* Common Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Header Styles */
+header {
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
+  padding: 10px 0;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-color);
   padding: 20px;
+}
+
+footer a {
+  color: var(--footer-link-color);
+}
+
+footer a:hover {
+  color: var(--footer-text-color);
 }

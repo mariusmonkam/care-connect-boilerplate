@@ -2,7 +2,7 @@
 
 import React from "react";
 import PageConfigurator from "../components/PageConfigurator";
-import "../styles/AboutUsPage.css";
+import "../styles/global.css";
 import appData from "../data/appData";
 
 const HomePage: React.FC = () => {
