@@ -17,8 +17,7 @@ Care-Connect Boilerplate is a comprehensive React starter kit designed for build
 ## Pre-configured Pages
 
 - Home
-- Patient Follow-Up
-- Doctor Collaboration
+- Doctor Portal
 - Patient Portal
 - About
 - Contact
@@ -51,6 +50,7 @@ Care-Connect Boilerplate is a comprehensive React starter kit designed for build
    ```
 
 4. Start the development server:
+
    ```
    npm start
    ```
@@ -73,13 +73,20 @@ care-connect-boilerplate/
 │   │   │   ├── Footer.tsx
 │   │   │   └── ...
 │   │   │
-│   │   ├── medical/
+│   │   ├── care/
 │   │   │   ├── PatientDashboard.tsx
 │   │   │   ├── DoctorCollaborationBoard.tsx
 │   │   │   ├── MedicalRecordViewer.tsx
 │   │   │   └── AppointmentScheduler.tsx
 │   │   │
 │   │   └── PageConfigurator.tsx
+│   │
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   ├── DoctorPortal.tsx
+│   │   ├── PatientPortal.tsx
+│   │   ├── About.tsx
+│   │   └── Contact.tsx
 │   │
 │   ├── contexts/
 │   │   └── ThemeContext.tsx
@@ -109,7 +116,7 @@ You can customize the application's theme by modifying the `theme` object in `sr
 
 ### Adding New Pages
 
-1. Create a new page component in `src/components/`.
+1. Create a new page component in `src/pages/`.
 2. Add the page data to `src/data/appData.ts`.
 3. Update the routing in `src/App.tsx`.
 
